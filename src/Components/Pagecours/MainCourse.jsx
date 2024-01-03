@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-scroll';
 import Filter from './Filter';
-import Categories from './Categories';
+import PopularCourses from './PopularCourses';
 import CourseList from './CourseList';
 
 
@@ -63,7 +63,7 @@ const MainCourse = () => {
             
         },
         {
-            name: "Data Science",
+            name: "Music",
             image: "/img/data.svg"
             
         },
@@ -80,7 +80,7 @@ const MainCourse = () => {
                         
                     {category.map((item, index) => (
                         
-                        <div className=' cursor-pointer'>
+                        <Link to='category' className=' cursor-pointer'>
                             <div key={index} className='flex justify-between items-center gap-8  w-full p-3 text-gray-500 shadow-lg rounded-lg peer-checked:bg-bg-toggle dark:border-first-color peer-checked:border-first-color peer-checked:text-white hover:bg-bg-toggle hover:text-white hover:border-first-color'>
                                 <div className='flex gap-2 items-center'>
                                     <img src={item.image} className='w-6 h-6'/> 
@@ -88,13 +88,13 @@ const MainCourse = () => {
                                 </div>
                                 <img src="/img/arrowCourse.svg" className='hover:bg-second-color rounded-sm hover:text-white'/>
                             </div>  
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>
             
             <div>
-                <Categories/>
+                <PopularCourses/>
             </div>
            
         </div>
@@ -108,8 +108,8 @@ const MainCourse = () => {
                 <Filter/> 
             </div>
             
-            <div className='mt-16 md:w-3/4 flex flex-col flex-1 '>
-                <div className='md:absolute -bottom-[540px] md:bottom-[215px] xl:-bottom-[260px]'>
+            <div className='mt-16 md:w-3/4 flex flex-col flex-1 ' id='category'>
+                <div className='md:absolute -bottom-[540px] md:hidden'>
                     <p className='text-first-color bg-white border border-first-color border-1 font-semibold px-8 py-2.5 rounded-md my-5 md:my-0 text-center'>Courses</p>
                 </div>
                 

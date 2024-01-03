@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 
-const Categories = () => {
+const PopularCourses = () => {
   const courses = [
     {
       title: 'Web development',
@@ -95,4 +95,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default PopularCourses;
