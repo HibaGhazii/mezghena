@@ -1,8 +1,16 @@
-import React from 'react'
+import {useState} from 'react'
 // import { Accordion } from 'flowbite-react';
 import Accordion from './Accordion'
 
 const Filter = () => {
+  const [newCourse, setNewCourse] = useState();
+  //const [category, setCategory] = useState();
+  const [subCategory, setSubCategory] = useState();
+  const [level, setLevel] = useState();
+  const [language, setLanguage] = useState();
+  const [subTitle, setSubTitle] = useState();
+
+  
   return (
     <div>
         <div>
@@ -16,7 +24,7 @@ const Filter = () => {
               <Accordion.Title>New Courses</Accordion.Title>
               <Accordion.Content>
                 <div className='flex items-center gap-2'>
-                  <input type="checkbox" id='new-course' className='rounded-sm' /> New Course
+                  <input type="checkbox" id='new-course' className='rounded-sm' /> (20) New Courses
                 </div>
               </Accordion.Content>
             </Accordion.Panel>
@@ -26,11 +34,11 @@ const Filter = () => {
               <Accordion.Title>Sub-category</Accordion.Title>
               <Accordion.Content>
                 <div className='flex items-center gap-2'>
-                  <input type="checkbox" id='dev' className='rounded-sm' /> Web Development
+                  <input type="checkbox" id='dev' className='rounded-sm' /> (20) Web Development
                 </div>
 
                 <div className='flex items-center gap-2'>
-                  <input type="checkbox" id='design' className='rounded-sm' /> Design
+                  <input type="checkbox" id='design' className='rounded-sm' /> (20) Design
                 </div>
               </Accordion.Content>
             </Accordion.Panel>
@@ -40,15 +48,15 @@ const Filter = () => {
               <Accordion.Title>Level</Accordion.Title>
               <Accordion.Content>
                 <div className='flex items-center gap-2'>
-                  <input type="checkbox" id='beginner' className='rounded-sm' /> Beginner
+                  <input type="checkbox" id='beginner' className='rounded-sm' /> (20) Beginner
                 </div>
 
                 <div className='flex items-center gap-2'>
-                  <input type="checkbox" id='intermediate' className='rounded-sm' /> Intermediate
+                  <input type="checkbox" id='intermediate' className='rounded-sm' /> (20) Intermediate
                 </div>
 
                 <div className='flex items-center gap-2'>
-                  <input type="checkbox" id='advanced' className='rounded-sm' /> Advanced
+                  <input type="checkbox" id='advanced' className='rounded-sm' /> (20) Advanced
                 </div>
               </Accordion.Content>
             </Accordion.Panel>
@@ -58,15 +66,15 @@ const Filter = () => {
               <Accordion.Title>Language</Accordion.Title>
               <Accordion.Content>
                   <div className='flex items-center gap-2'>
-                    <input type="checkbox" id='arabic' className='rounded-sm' /> Arabic
+                    <input type="checkbox" id='arabic' className='rounded-sm' /> (20) Arabic
                   </div>
 
                   <div className='flex items-center gap-2'>
-                    <input type="checkbox" id='french' className='rounded-sm' /> French
+                    <input type="checkbox" id='french' className='rounded-sm' /> (20) French
                   </div>
 
                   <div className='flex items-center gap-2'>
-                    <input type="checkbox" id='english' className='rounded-sm' /> English
+                    <input type="checkbox" id='english' className='rounded-sm' /> (20) English
                   </div>
               </Accordion.Content>
             </Accordion.Panel>
@@ -76,15 +84,15 @@ const Filter = () => {
               <Accordion.Title>Sub-titles</Accordion.Title>
               <Accordion.Content>
                   <div className='flex items-center gap-2'>
-                    <input type="checkbox" id='sub-arabic' className='rounded-sm' /> Arabic
+                    <input type="checkbox" id='sub-arabic' className='rounded-sm' /> (20) Arabic
                   </div>
 
                   <div className='flex items-center gap-2'>
-                    <input type="checkbox" id='sub-french' className='rounded-sm' /> French
+                    <input type="checkbox" id='sub-french' className='rounded-sm' /> (20) French
                   </div>
 
                   <div className='flex items-center gap-2'>
-                    <input type="checkbox" id='sub-english' className='rounded-sm' /> English
+                    <input type="checkbox" id='sub-english' className='rounded-sm' /> (20) English
                   </div>
               </Accordion.Content>
             </Accordion.Panel>

@@ -64,7 +64,7 @@ const PopularCourses = () => {
   return (
     <div className='flex flex-row items-center relative'>
       <div
-        className='absolute left-0 md:left-20 lg:left-14 xl:left-28 top-1/2 transform -translate-y-1/2 cursor-pointer'
+        className='absolute left-0 md:left-10 lg:left-14 xl:left-28 top-1/2 transform -translate-y-1/2 cursor-pointer'
         onClick={prevSlide}
       >
         <BsArrowLeftCircleFill className='text-first-color w-[2.5rem] h-[2.5rem]' />
@@ -86,7 +86,7 @@ const PopularCourses = () => {
         </Slider>
       </div>
       <div
-        className='absolute right-0 md:right-20 lg:right-14 xl:right-28 top-1/2 transform -translate-y-1/2 cursor-pointer'
+        className='absolute right-0 md:right-10 lg:right-14 xl:right-28 top-1/2 transform -translate-y-1/2 cursor-pointer'
         onClick={nextSlide}
       >
         <BsArrowRightCircleFill className='text-first-color w-[2.5rem] h-[2.5rem] drop-shadow-2xl' />
