@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom/cjs/react-router-dom.min";
 
 const CourseList = ({posts,loading}) => {
   
@@ -9,7 +10,7 @@ const CourseList = ({posts,loading}) => {
                 <div className=''>
                     <div className="flex flex-col gap-4">
                         {posts.map((course, index) => (
-                            <div className='flex flex-col md:flex-row' key={index}> 
+                            <Link to='/CourseID' className='flex flex-col md:flex-row' key={index}> 
 
                                 <div className='flex flex-row gap-3'>
                                         <div className=''>
@@ -35,7 +36,7 @@ const CourseList = ({posts,loading}) => {
                                         </div>
                                     </div>
                                     
-                            </div>
+                            </Link>
                         ))}
                         
                     </div>
