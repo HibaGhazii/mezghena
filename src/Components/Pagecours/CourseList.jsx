@@ -1,111 +1,14 @@
-import React, { useState } from 'react';
-import Pagination from './Pagination'; // Adjust the import path based on your project structure
 
-
-const courseList = [
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 38,
-        session: 15,
-        level: "Beginner",
-    },
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 38,
-        session: 15,
-        level: "Intermediate",
-    },
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 38,
-        session: 15,
-        level: "Intermediate",
-    },
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 38,
-        session: 15,
-        level: "Advanced",
-    },
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 38,
-        session: 15,
-        level: "All levels",
-    },
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 20,
-        session: 15,
-        level: "Beginner",
-    },
-    ,
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 38,
-        session: 15,
-        level: "All levels",
-    },
-    {
-        image:'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg',
-        title: "Web Design Principles for Beginners",
-        description: "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
-        professor:'John Taieb ( Developer ), learn to code',
-        price: 98,
-        duration: 20,
-        session: 15,
-        level: "Beginner",
-    },
-
-]
-
-const CourseList = () => {
-  const [courses, setCourses] = useState(courseList);
-  const [currentPage, setCurrentPage] = useState(1); 
-
-  const handlePageClick = (selectedPage) => {
-    
-    setCurrentPage(selectedPage);
-    
-    const coursesPerPage = 4;
-    const startIndex = (selectedPage - 1) * coursesPerPage;
-    const endIndex = startIndex + coursesPerPage;
-    const newCourses = courseList.slice(startIndex, endIndex);
-    setCourses(newCourses);
-  };
+const CourseList = ({posts,loading}) => {
+  
+    if(loading){
+      return <p className='text-xl'>Loading...</p>
+    }
 
   return (
                 <div className=''>
                     <div className="flex flex-col gap-4">
-                        {courseList.map((course, index) => (
+                        {posts.map((course, index) => (
                             <div className='flex flex-col md:flex-row' key={index}> 
 
                                 <div className='flex flex-row gap-3'>
@@ -134,7 +37,7 @@ const CourseList = () => {
                                     
                             </div>
                         ))}
-                        <Pagination onPageChange={handlePageClick} />
+                        
                     </div>
                 </div>
 
