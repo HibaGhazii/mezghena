@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import arrowUp from '../assets/img/arrowUp.svg';
+import arrowDown from '../assets/img/arrowDown.svg';
 
 const Accordion = ({ children }) => {
   const [openPanels, setOpenPanels] = useState([]);
@@ -28,7 +30,7 @@ const AccordionPanel = ({ isOpen, onToggle, children }) => {
     <div className='p-3'>
       <div onClick={onToggle} className=' cursor-pointer flex items-center justify-between mb-2'>
         {children[0]}
-        <img src={`/img/${isOpen ? 'arrowUp' : 'arrowDown'}.svg`} className='h-8 w-8'/>
+        <img src={isOpen ? arrowUp : arrowDown} className='h-8 w-8'/>
       </div>
       {isOpen && <div>{children.slice(1)} </div>}
     </div>

@@ -1,14 +1,16 @@
 import React from 'react';
-
+import teachingImage from "../assets/img/teachingImage.svg"
+import heart from "../assets/img/heart.svg"
+import teachingExperience from "../assets/img/teachingExperience.svg"
 const PremiumTeaching = () => {
   return (
-    <div className="bg-[url('../public/img/premiumTeachingBg.svg')] flex flex-col pt-10 pb-56 px-16 mt-10 sm:pb-0 sm:mt-10">
+    <div className="bg-[url('../src/Components/assets/img/premiumTeachingBg.svg')] flex flex-col pt-10 pb-56 px-16 mt-10 sm:pb-0 sm:mt-10">
       {/* Container for the content */}
       <div className='flex flex-col gap-4 relative md:flex md:flex-row'>
 
         {/* Image container on the left */}
         <div className='absolute top-[100%] sm:top-0 sm:left-0 sm:w-1/2'>
-          <img src="/img/teachingImage.svg" className='w-full h-80 sm:w-full sm:h-[420px] sm:ml-[-70px] lg:h-[340px]' />
+          <img src={teachingImage} className='w-full h-80 sm:w-full sm:h-[420px] sm:ml-[-70px] lg:h-[340px]' />
         </div>
 
         {/* Text content container on the right */}
@@ -21,7 +23,7 @@ const PremiumTeaching = () => {
             <div>
               {/* Heart icon */}
               <div>
-                <img src="/img/heart.svg" className='bg-second-color/40 rounded-full p-2 md:px-6 md:rounded-lg' />
+                <img src={heart} className='bg-second-color/40 rounded-full p-2 md:px-6 md:rounded-lg' />
               </div>
             </div>
             <div>
@@ -35,7 +37,7 @@ const PremiumTeaching = () => {
             <div>
               {/* Teaching experience icon */}
               <div>
-                <img src="/img/teachingExperience.svg" className='bg-second-color/40 rounded-full p-2 md:px-6 md:rounded-lg' />
+                <img src={teachingExperience} className='bg-second-color/40 rounded-full p-2 md:px-6 md:rounded-lg' />
               </div>
             </div>
             <div>

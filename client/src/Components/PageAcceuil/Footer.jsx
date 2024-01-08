@@ -1,7 +1,9 @@
+import logo from "../assets/img/mezghena-logo.svg";
+
 const Footer = () => {
   
   return (
-    <div className="font-Roboto w-full h-auto bg-[url('../public/img/premiumTeachingBg.svg')] rounded-t-[60px] mt-14 pt-5 text-gray-600">
+    <div className="font-Roboto w-full h-auto bg-[url('../src/Components/assets/img/premiumTeachingBg.svg')] rounded-t-[60px] mt-14 pt-5 text-gray-600">
       {/* Grid layout with flexbox for responsiveness */}
       <div className='grid w-full justify-between sm:flex sm:justify-between'>
 
@@ -9,7 +11,7 @@ const Footer = () => {
         <div className='footer px-4 pt-2 sm:pt-2 sm:px-10 md:px-10'>
           {/* Logo and title */}
           <div className="flex justify-center sm:justify-start md:justify-start gap-2 items-center pb-3">
-            <img src="/img/mezghena-logo.svg" alt="Mezghena logo" className=""/>
+            <img src={logo} alt="Mezghena logo" className=""/>
             <p className='font-bold font-Roboto text-lg text-black'>Mezghena</p>
           </div>
           {/* Description */}

@@ -1,5 +1,9 @@
 import React from 'react';
-
+import howitwork from "../assets/img/howitwork.png"
+import signUp from "../assets/img/signUp.svg"
+import getAccess from "../assets/img/getAccess.svg"
+import question from "../assets/img/question.svg"
+import result from "../assets/img/result.svg"
 const HowItWorks = () => {
  
   return (
@@ -49,7 +53,7 @@ const HowItWorks = () => {
 
         {/* Right section with an image and a button */}
         <div className='lg:w-full lg:h-full relative lg:block hidden'>
-          <img src="/img/howitwork.png" className='w-full h-auto max-w-xl rounded-lg lg:max-w-3xl lg:max-h-[400px]' alt="How It Works Image"/>
+          <img src={howitwork} className='w-full h-auto max-w-xl rounded-lg lg:max-w-3xl lg:max-h-[400px]' alt="How It Works Image"/>
           <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-28 lg:-translate-x-[75%] text-center'>
             <button className='bg-first-color text-white rounded-xl px-4 py-2 md:px-6 md:py-2 lg:px-8 lg:py-3 lg:text-lg'>Start Now</button>
           </div>
@@ -62,7 +66,7 @@ const HowItWorks = () => {
         {/* Step 1 */}
         <div>
           <div className=''>
-            <img src="/img/signUp.svg" className='rounded-xl w-10 h-10 bg-first-color p-2'/>
+            <img src={signUp} className='rounded-xl w-10 h-10 bg-first-color p-2'/>
           </div>
           <div>
              <p className='text-light-blue text-xl'>Sign Up</p>
@@ -73,7 +77,7 @@ const HowItWorks = () => {
         {/* Step 2 */}
         <div>
           <div>
-            <img src="/img/getAccess.svg" className='rounded-xl w-10 h-10 bg-first-color p-2' />
+            <img src={getAccess} className='rounded-xl w-10 h-10 bg-first-color p-2' />
           </div>
           <div>
             <p className='text-light-blue text-xl'>Get access</p>
@@ -84,7 +88,7 @@ const HowItWorks = () => {
         {/* Step 3 */}
         <div>
           <div>
-            <img src="/img/question.svg" className='rounded-xl w-10 h-10 bg-first-color p-2'/>
+            <img src={question} className='rounded-xl w-10 h-10 bg-first-color p-2'/>
           </div>
           <div>
             <p className='text-light-blue text-xl'>Practice questions</p>
@@ -95,7 +99,7 @@ const HowItWorks = () => {
         {/* Step 4 */}
         <div>
           <div>
-            <img src="/img/result.svg" className='rounded-xl w-10 h-10 bg-first-color p-2'/>
+            <img src={result} className='rounded-xl w-10 h-10 bg-first-color p-2'/>
           </div>
           <div>
             <p className='text-light-blue text-xl'>Get Result</p>

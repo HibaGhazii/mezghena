@@ -1,20 +1,23 @@
 import React from 'react';
+import computer from '../assets/img/computer.svg'
+import letter from '../assets/img/letter.svg'
+import certificate from '../assets/img/certificate.svg'
 
 const GetReady = () => {
   // Array of skills with their details
   let skills = [
     {
-      image: '/img/computer.svg',
+      image: computer,
       title: 'Learn The Latest Skills',
       body: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a BC, making it over 2000 years old.',
     },
     {
-      image: '/img/letter.svg',
+      image: letter,
       title: 'Get Ready For a Career',
       body: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a BC, making it over 2000 years old.',
     },
     {
-      image: '/img/certificate.svg',
+      image: certificate,
       title: 'Earn a Certificate',
       body: 'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a BC, making it over 2000 years old.',
     },

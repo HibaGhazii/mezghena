@@ -1,9 +1,12 @@
 import React from 'react';
+import herosection1 from "../assets/img/hero-section-img.svg";
+import herosection2 from "../assets/img/heroSection1.png";
+import herosection3 from "../assets/img/heroSection2.png";
 
 const HeroSection = () => {
 
   return (
-    <div className="flex flex-col md:flex-row pt-28 bg-[url('../public/img/Hero-Section.png')] py-14 md:py-28 lg:py-32 rounded-b-[60px] bg-cover">
+    <div className="flex flex-col md:flex-row pt-28 bg-[url('../src/Components/assets/img/Hero-Section.png')] py-14 md:py-28 lg:py-32 rounded-b-[60px] bg-cover">
       
       {/* Left section of the hero with text content */}
       <div className=" text-left px-12 md:block md:w-1/2 md:p-4 lg:px-16">
@@ -23,19 +26,19 @@ const HeroSection = () => {
       {/* Right section of the hero with images and promotional text */}
       <div className="flex flex-row justify-between pt-10 md:w-1/2 md:relative ">
         <div className=''>
-          <img src="/img/hero-section-img.svg" className='md:hidden'/>
+          <img src={herosection1} className='md:hidden'/>
           
           {/* Images displayed on larger screens */}
           <div className='hidden md:absolute md:top-0 md:left-0 md:right-0 md:flex md:mx-4 lg:flex lg:mx-32'>
             
             {/* Left image */}
             <div className='md:w-1/2 md:absolute md:top-10 md:-left-2 lg:absolute lg:top-10 lg:-left-2'>
-              <img src="/img/heroSection1.png" className='md:w-[250px] md:h-[250px] lg:w-full lg:h-[250px]' alt="Hero Section Image 1"/>
+              <img src={herosection2} className='md:w-[250px] md:h-[250px] lg:w-full lg:h-[250px]' alt="Hero Section Image 1"/>
             </div>
             
             {/* Right image */}
             <div className='md:w-1/2 md:absolute md:-top-6 md:right-0 lg:absolute lg:-top-6 lg:right-0'>
-              <img src="/img/heroSection2.png" className='md:w-[250px] md:h-[250px] lg:w-full lg:h-[250px]' alt="Hero Section Image 2"/>
+              <img src={herosection3} className='md:w-[250px] md:h-[250px] lg:w-full lg:h-[250px]' alt="Hero Section Image 2"/>
             </div>
             
           </div>

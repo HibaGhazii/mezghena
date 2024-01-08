@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroSectionCourse = () => {
   return (
-    <div className=" flex flex-col justify-center items-center pt-20 pb-5 md:pt-28 bg-[url('../public/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
+    <div className=" flex flex-col justify-center items-center pt-20 pb-5 md:pt-28 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
       
       <div className='text-EEE md:text-first-color font-bold text-center text-xl md:text-3xl'>
         <p className='md:mr-14 font-serif'>Find a course</p>      

@@ -5,68 +5,69 @@ import PopularCourses from './PopularCourses';
 import CourseList from './CourseList';
 import axios from 'axios';
 import Pagination from './Pagination'; 
-
+import arrowCourse from "../assets/img/arrowCourse.svg"
+import cercle from "../assets/img/ligneOrange.svg"
+import design from  "../assets/img/design.svg"
+import development from "../assets/img/developpement.svg"
+import photo from "../assets/img/photo.svg"
+import marketing from "../assets/img/marketing.svg"
+import business from "../assets/img/business.svg"
 
 const MainCourse = () => {
     const category = [
         {
             name: "Design",
-            image: "/img/design.svg"
+            image:design
 
         },
         {
             name: "Development",
-            image: "/img/developpement.svg"
+            image:development
             
         },
         {
             name: "Photography",
-            image: "/img/photo.svg"
+            image: photo
             
         },
         {
             name: "Marketing",
-            image: "/img/marketing.svg"
+            image: marketing
             
         },
         {
             name: "Business",
-            image: "/img/business.svg"
-            
-        },
-        {
-            name: "Data Science",
-            image: "/img/data.svg"
+            image: business
             
         },
         {
             name: "Design",
-            image: "/img/design.svg"
+            image:design
 
         },
         {
             name: "Development",
-            image: "/img/developpement.svg"
+            image: development
             
         },
         {
             name: "Photography",
-            image: "/img/photo.svg"
+            image: photo
             
         },
         {
             name: "Marketing",
-            image: "/img/marketing.svg"
+            image: marketing
             
         },
         {
             name: "Business",
-            image: "/img/business.svg"
+            image: business
             
         },
         {
             name: "Music",
-            image: "/img/data.svg"
+            image:marketing
             
         },
     ];
@@ -79,7 +80,7 @@ const MainCourse = () => {
     useEffect(() => {
         const fetchPosts = async () => {
             setLoading(true);
-            const res = await axios.get('http://localhost:3000/courseList');
+            const res = await axios.get(datajson);
             setPosts(res.data);
             setLoading(false);
 
@@ -102,7 +103,7 @@ const MainCourse = () => {
     <div className='flex flex-col md:mx-16 mx-2'>
         <div className='flex flex-col'>
             <div className='mt-8'>
-                <p className='text-2xl font-semibold'>Most <span className='text-bg-toggle'>Popular Categories</span></p><img src="/img/ligneOrange.svg" className='ml-14 w-24'/>
+                <p className='text-2xl font-semibold'>Most <span className='text-bg-toggle'>Popular Categories</span></p><img src={cercle} className='ml-14 w-24'/>
                 <p className='text-sm text-gray-500 pb-5'>Various versions have evolved over the years, sometimes by accident,</p>
                 <div class="grid w-full gap-2 grid-cols-2 md:grid-cols-4 xl:grid-cols-5">
                         
@@ -114,7 +115,7 @@ const MainCourse = () => {
                                     <img src={item.image} className='w-6 h-6'/> 
                                     {item.name}
                                 </div>
-                                <img src="/img/arrowCourse.svg" className='hover:bg-second-color rounded-sm hover:text-white'/>
+                                <img src={arrowCourse} className='hover:bg-second-color rounded-sm hover:text-white'/>
                             </div>  
                         </Link>
                     ))}

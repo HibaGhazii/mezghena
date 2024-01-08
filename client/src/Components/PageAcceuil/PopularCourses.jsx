@@ -1,6 +1,12 @@
 // Import useEffect, useState, and arrows icons from the 'react' and 'react-icons/bs' libraries
 import React, { useEffect, useState } from 'react';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
+import course1 from "../assets/img/popCourse1.svg"
+import course2 from  "../assets/img/popCourse2.jpg"
+import course3 from "../assets/img/popCourse3.jpg"
+import duration from "../assets/img/duration.svg"
+import courseNumber from "../assets/img/courseNumber.svg"
+import sale from "../assets/img/sales.svg"
 
 const PopularCourses = () => {
   // State to track the current slide index
@@ -9,7 +15,7 @@ const PopularCourses = () => {
   // Array of slide objects with image, title, category, price, duration, courseNumber, and sales information
   const slidesImages = [
     {
-      image: "/img/popCourse1.svg", //la taille d'image doit etre 278 x 238
+      image: course1, //la taille d'image doit etre 278 x 238
       title: "UI/UX Design",
       category: 'UI/UX Design',
       price: "$98",
@@ -18,7 +24,7 @@ const PopularCourses = () => {
       sales: 300,
     },
     {
-      image: "/img/popCourse2.jpg",
+      image: course2,
       title: "Web Development",
       category: 'Web Development',
       price: "$120",
@@ -27,7 +33,7 @@ const PopularCourses = () => {
       sales: 250,
     },
     {
-      image: "/img/popCourse3.jpg",
+      image: course3,
       title: "Data Science Basics",
       category: 'Data Science',
       price: "$150",
@@ -94,15 +100,15 @@ const PopularCourses = () => {
               <hr />
               <div className='flex flex-row text-xs justify-between mt-2 text-gray-400'>
                 <div className='flex flex-row gap-1'>
-                  <img src="/img/duration.svg" alt="Duration icon" />
+                  <img src={duration} alt="Duration icon" />
                   <p className='font-Poppins'>{slide.duration}</p>
                 </div>
                 <div className='flex flex-row gap-1'>
-                  <img src="/img/courseNumber.svg" alt="Course number icon" />
+                  <img src={courseNumber} alt="Course number icon" />
                   <p className='font-Poppins'>{slide.courseNumber} Courses</p>
                 </div>
                 <div className='flex flex-row gap-1'>
-                  <img src="/img/sales.svg" alt="Sales icon" />
+                  <img src={sale} alt="Sales icon" />
                   <p className='font-Poppins'>{slide.sales} Sales</p>
                 </div>
               </div>

@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
+import student1 from '../assets/img/student1.svg'
+import student2 from '../assets/img/student2.svg'
+import student3 from '../assets/img/student3.svg'
 
 const WhatStudentSay = () => {
   
@@ -12,19 +15,19 @@ const WhatStudentSay = () => {
       comment:'Complete account of the system and expound the actual Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots',
       name: "Dannette P. Cervantes",
       speciality:'Web Design',
-      photo:'/img/student1.svg'
+      photo:student1
     },
     {
       comment:'There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour',
       name: "Clara R. Altman",
       speciality:'UI/UX Design',
-      photo:'/img/student2.svg'
+      photo:student2
     },
     {
       comment:'Teachings of the great explore of truth, the master-builder of human happiness. no one rejects,dislikes, or avoids pleasure itself roots.',
       name: "Finlay Kirk",
       speciality:'Web Developer',
-      photo:'/img/student3.svg'
+      photo:student3
     },
   ];
 

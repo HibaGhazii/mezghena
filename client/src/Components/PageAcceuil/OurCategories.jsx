@@ -1,6 +1,9 @@
 // Import useEffect, useState, and icons from the 'react' and 'react-icons/bs' libraries
 import React, { useEffect, useState } from 'react';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
+import category from "../assets/img/category1.jpg"
+import category2 from "../assets/img/category2.jpg"
+import category3 from "../assets/img/category3.jpg"
 
 const OurCategories = () => {
   // State to track the current slide index
@@ -8,12 +11,12 @@ const OurCategories = () => {
 
   // Array of slide objects with image, category, and professor information
   const slidesImages = [
-    { image: "/img/category1.jpg", category: 'Marketing', professor: '@George Brown College' }, //taille de l'image 280 x 130
-    { image: "/img/category2.jpg", category: 'Data analysis', professor: '@George Brown College' },
-    { image: "/img/category3.jpg", category: 'Web development', professor: '@George Brown College' },
-    { image: "/img/category1.jpg", category: 'Marketing', professor: '@George Brown College' },
-    { image: "/img/category2.jpg", category: 'Data analysis', professor: '@George Brown College' },
-    { image: "/img/category3.jpg", category: 'Web development', professor: '@George Brown College' },
+    { image: category, category: 'Marketing', professor: '@George Brown College' }, //taille de l'image 280 x 130
+    { image: category2, category: 'Data analysis', professor: '@George Brown College' },
+    { image: category3, category: 'Web development', professor: '@George Brown College' },
+    { image: category, category: 'Marketing', professor: '@George Brown College' },
+    { image: category2, category: 'Data analysis', professor: '@George Brown College' },
+    { image: category3, category: 'Web development', professor: '@George Brown College' },
   ];
 
   // Total number of slides

@@ -1,13 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-
+import login from "../assets/img/login.svg"
+import google from "../assets/img/google.svg"
+import logo from "../assets/img/mezghena-logo.svg"
 const Login = () => {
   return (
     <div className='md:flex md:bg-bg-toggle md:h-full'>
         <div className='md:w-1/2 md:flex hidden'>
-            <img src="/img/login.svg" className='w-full h-[900px]'/>
+            <img src={login} className='w-full h-[900px]'/>
         </div>
-        <div className="mx-5 md:bg-[url('../public/img/bgWhite.svg')] md:bg-cover md:w-[50%] md:absolute md:h-[900px] md:-right-5 md:pl-28">
+        <div className="mx-5 md:bg-[url('../src/Components/assets/img/bgWhite.svg')] md:bg-cover md:w-[50%] md:absolute md:h-[900px] md:-right-5 md:pl-28">
             <div className='text-center'>
                 <p className="mt-24 md:mt-8 lg:mt-28 text-4xl font-bold text-bg-toggle font-Jost">Welcome back</p>
                 <p className='text-96A0AD mb-5 mt-4 mx-16 md:mx-40'>We've missed you! Please sign in to catch up on what you've missed</p>
@@ -16,7 +18,7 @@ const Login = () => {
             <div className='text-center md:flex md:justify-center'>
                 
                 <button className='font-semibold flex justify-center items-center py-2 px-10 md:p-1.5 w-full md:w-80 border border-1 border-first-color rounded-2xl'>
-                    <img src="/img/google.svg"/>
+                    <img src={google}/>
                     Log In with Google
                 </button>
                 
@@ -46,7 +48,9 @@ const Login = () => {
 
             <div className='flex flex-col items-center text-center pt-8 px-2 md:pt-4 '> 
                 <p className='text-sm md:text-xs'>Don't have an account yet? <Link to='/signup'  className='text-first-color'>Sign up</Link> now to join our community</p>
-                <img src="/img/mezghena-logo.svg" className='w-[115px] h-[120px] md:h-20 mt-[31px] md:my-2 lg:h-24 lg:mt-10' />
+                <Link to="/">
+                    <img src={logo} className=' cursor-pointer w-[115px] h-[120px] md:h-20 mt-[31px] md:my-2 lg:h-24 lg:mt-10' />
+                </Link>
             </div>
         </div>
         

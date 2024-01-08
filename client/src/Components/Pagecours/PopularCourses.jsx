@@ -5,26 +5,27 @@ import 'slick-carousel/slick/slick-theme.css';
 import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from 'react-icons/bs';
 
 const PopularCourses = () => {
+  const image = 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg';
   const courses = [
     {
       title: 'Web development',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in velit nec',
-      imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg',
+      imageUrl: image,
     },
     {
       title: 'Web development',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in velit nec',
-      imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg',
+      imageUrl: image,
     },
     {
       title: 'Web development',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in velit nec',
-      imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg',
+      imageUrl: image,
     },
     {
       title: 'Web development',
       description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec in velit nec',
-      imageUrl: 'https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg',
+      imageUrl: image,
     },
   ];
 

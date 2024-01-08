@@ -2,6 +2,7 @@
 import React from 'react';
 import { Navbar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
+import logo from "../assets/img/mezghena-logo.svg"
 
 function NavbarComponent() {
   
@@ -9,7 +10,7 @@ function NavbarComponent() {
     <Navbar fluid rounded className='bg-bg-toggle md:flex md:items-center lg:block lg:px-28 md:bg-inherit lg:bg-inherit absolute w-full md:text-white lg:text-white '>
       {/* Navbar Brand with Mezghena Logo */}
       <Navbar.Brand as={Link} to="/">
-        <img src="/img/mezghena-logo.svg" className="mr-3 h-[50px] sm:h-[60px] md:h-[60px] lg:h-[80px] w-[80px]" alt="Mezghena Logo" />
+        <img src={logo} className="mr-3 h-[50px] sm:h-[60px] md:h-[60px] lg:h-[80px] w-[80px]" alt="Mezghena Logo" />
       </Navbar.Brand>
 
       {/* Navbar Toggle Button */}
