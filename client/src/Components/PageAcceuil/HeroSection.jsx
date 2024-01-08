@@ -6,7 +6,7 @@ const HeroSection = () => {
     <div className="flex flex-col md:flex-row pt-28 bg-[url('../public/img/Hero-Section.png')] py-14 md:py-28 lg:py-32 rounded-b-[60px] bg-cover">
       
       {/* Left section of the hero with text content */}
-      <div className=" text-left px-12 md:block md:w-1/2 md:p-4 lg:px-24">
+      <div className=" text-left px-12 md:block md:w-1/2 md:p-4 lg:px-16">
           <p className='text-second-color text-3xl font-sans font-semibold md:pl-6'>Best Learning  </p>
           <p className='text-light-blue text-3xl font-sans font-semibold md:pl-6'>Education Platform</p>
           <p className='text-8FB3CE text-3xl font-sans font-semibold md:pl-6'>in The Algeria</p>
@@ -42,7 +42,7 @@ const HeroSection = () => {
         </div>
 
         {/* Promotional text displayed on the right */}
-        <div className='text-white bg-second-color rounded-l-3xl my-6 px-4 p-5 md:absolute md:rounded-2xl md:top-40 md:left-28 md:pt-2 md:pb-1 md:mx-8  lg:left-44 lg:mx-28'>
+        <div className='text-white bg-second-color rounded-l-3xl my-6 px-4 p-5 md:absolute md:rounded-2xl md:top-40 md:left-28 md:pt-2 md:pb-1 md:mx-8 lg:left-32 lg:mx-24'>
           <p> ✓ Get 30% off on every 1st month</p>
           <p> ✓ Expert teachers</p>
         </div>

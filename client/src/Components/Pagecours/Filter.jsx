@@ -2,15 +2,17 @@ import {useState} from 'react'
 // import { Accordion } from 'flowbite-react';
 import Accordion from './Accordion'
 
-const Filter = () => {
-  const [newCourse, setNewCourse] = useState();
-  //const [category, setCategory] = useState();
-  const [subCategory, setSubCategory] = useState();
-  const [level, setLevel] = useState();
-  const [language, setLanguage] = useState();
-  const [subTitle, setSubTitle] = useState();
+const Filter = ({posts}) => {
+  // const [newCourse, setNewCourse] = useState();
+  // //const [category, setCategory] = useState();
+  // const [subCategory, setSubCategory] = useState();
+  // const [level, setLevel] = useState();
+  // const [language, setLanguage] = useState();
+  // const [subTitle, setSubTitle] = useState();
 
   
+    
+
   return (
     <div>
         <div>
@@ -99,6 +101,7 @@ const Filter = () => {
             <hr />
           </Accordion>
         </div>
+
     </div>
   )
 }

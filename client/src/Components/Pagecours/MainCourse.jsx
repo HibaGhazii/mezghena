@@ -108,7 +108,7 @@ const MainCourse = () => {
                         
                     {category.map((item, index) => (
                         
-                        <Link to='category' className=' cursor-pointer'>
+                        <Link to='category' onClick={()=>{}} className=' cursor-pointer'>
                             <div key={index} className='flex justify-between items-center gap-8  w-full p-3 text-gray-500 shadow-lg rounded-lg peer-checked:bg-bg-toggle dark:border-first-color peer-checked:border-first-color peer-checked:text-white hover:bg-bg-toggle hover:text-white hover:border-first-color'>
                                 <div className='flex gap-2 items-center'>
                                     <img src={item.image} className='w-6 h-6'/> 

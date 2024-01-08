@@ -76,9 +76,9 @@ const WhatStudentSay = () => {
             
             {/* Mapping through each slide and rendering its content */}
             {slideComment.map((slide, idx) => (
-              <div key={idx} className={`text-center p-5 rounded-[0.5rem] shadow-md shadow-gray-500 mx-3 h-[200px] md:h-[300px] lg:h-[210px] md:mx-1 bg-first-color/10 ${currentSlide === idx ? 'block' : 'hidden'} md:flex md:flex-col md:mb-10 lg:flex lg:flex-col`}>
+              <div key={idx} className={`text-center p-5 rounded-[0.5rem] shadow-md shadow-gray-500 mx-3 h-[200px] md:h-auto lg:h-auto md:mx-1 bg-first-color/10 ${currentSlide === idx ? 'block' : 'hidden'} md:flex md:flex-col md:mb-10 lg:flex lg:flex-col`}>
                 
-                {/* Comment */}
+                {/* Comment */} 
                 <div>
                   <p className='font-Roboto text-585858'>“{slide.comment}”</p>
                 </div>
