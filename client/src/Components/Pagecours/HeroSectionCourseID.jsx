@@ -4,7 +4,7 @@ import { HiHome } from 'react-icons/hi';
 
 const HeroSectionCourseID = () => {
   return (
-    <div className="text-white flex flex-row pb-5 md:pt-28 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
+    <div className="text-white flex flex-row pb-12 md:pt-28 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
       
         <div className='w-1/2 flex flex-col gap-12 pt-10'>
             <div className='flex ml-36 '>
