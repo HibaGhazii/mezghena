@@ -8,7 +8,7 @@ const HeroSectionCourseID = () => {
       
         <div className='w-1/2 flex flex-col gap-12 pt-10'>
             <div className='flex ml-36 '>
-                {/* <div className="flex" aria-label="Breadcrumb">
+                <div className="flex" aria-label="Breadcrumb">
                     <ol className="flex items-center space-x-4">
                         <li>
                         <Link to="/" className="text-blue-500 hover:underline">
@@ -23,7 +23,7 @@ const HeroSectionCourseID = () => {
                         </li>
                         <li className="text-gray-500">Development</li>
                     </ol>
-                </div> */}
+                </div>
             </div>
 
             <div className='flex flex-col ml-36 gap-3'>
