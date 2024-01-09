@@ -1,0 +1,292 @@
+{
+    
+ "courseList": [
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Beginner",
+        "category":"design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Intermediate",
+        "category":"design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Intermediate",
+        "category":"design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Advanced",
+        "category":"design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "All levels",
+        "category":"design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "All levels",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Beginner",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Intermediate",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Intermediate",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Advanced",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "All levels",
+        "category":"photography"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"marketing"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "All levels",
+        "category":"marketing"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"marketing"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-1.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Beginner",
+        "category":"marketing"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-2.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Intermediate",
+        "category":"business"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-3.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Intermediate",
+        "category":"business"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-4.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "Advanced",
+        "category":"business"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "All levels",
+        "category":"web-design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"web-design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-5.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 38,
+        "session": 15,
+        "level": "All levels",
+        "category":"web-design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"web-design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"web-design"
+    },
+    {
+        "image":"https://flowbite.s3.amazonaws.com/docs/gallery/square/image-6.jpg",
+        "title": "Web Design Principles for Beginners",
+        "description": "Learn the fundamentals of web design, including color theory, typography, and layout techniques. This course is designed",
+        "professor":"John Taieb ( Developer ), learn to code",
+        "price": 98,
+        "duration": 20,
+        "session": 15,
+        "level": "Beginner",
+        "category":"web-design"
+    }
+
+]
+}
