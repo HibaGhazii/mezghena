@@ -14,10 +14,10 @@ import { PiCertificateLight } from "react-icons/pi";
 
 const HeroSectionCourseID = () => {
   return (
-    <div className="text-white flex flex-col md:flex-row pb-12 pt-24 md:pt-32 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
+    <div className="text-white flex flex-col items-center md:flex-row pb-12 pt-24 md:pt-32 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
       
         <div className='md:w-[60%] flex flex-col gap-5 pt-10'>
-            <div className='flex ml-10 md:ml-36'>
+            <div className='flex ml-10 md:ml-44'>
                 <div className="flex" aria-label="Breadcrumb">
                     <ol className="flex items-center space-x-2 font-normal">
                         <li>
@@ -37,7 +37,7 @@ const HeroSectionCourseID = () => {
                 </div>
             </div>
 
-            <div className='flex flex-col mx-10 md:ml-36 gap-3'>
+            <div className='flex flex-col mx-10 md:ml-44 gap-3'>
                 <p className='text-4xl font-bold text-light-blue'>Learn Python from scratch course</p>
                 <p className='text-sm'>Build new skills for that “this is my year” feeling with courses, certificates, and degrees from world-class universities and companies.</p>
                 <div className='flex gap-6 text-sm'>
@@ -47,8 +47,8 @@ const HeroSectionCourseID = () => {
             </div>
         </div>
 
-        <div className="mt-12 ml-14 md:mt-0 md:w-[38%] md:absolute right-0 top-40 shadow-2xl">
-            <div className='bg-white w-80 h-auto rounded-[35px]'> 
+        <div className="mt-12 md:mt-0 md:w-[33%] md:absolute right-0 top-40">
+            <div className='bg-white w-80 h-auto rounded-[35px] shadow-xl'> 
                 <div className=''> 
                     <img src={image} className='h-48 w-80 rounded-t-[35px] brightness-50'/>
                     <IoPlayCircle  className=' cursor-pointer h-16 w-16 text-white absolute transform translate-x-32 -translate-y-32'/>
