@@ -28,23 +28,24 @@ import LessonDesc from './LessonDesc';
     };
 
     const AccordionPanel = ({ isOpen, onToggle, children }) => {
-        return ( 
-            <div className=''> 
-                <div onClick={onToggle} className='cursor-pointer flex items-center justify-between mb-2 '>
-                    <div className='flex items-center'>
-                        <img src={isOpen ? arrowUp : arrowDown} className='h-8 w-8'/>
-                        {children[0]} 
-                    </div>
-                    <div>
-                        <p className='p-1 text-sm text-gray-600'>
-                            5 sessions • 14mn
-                        </p>
-                    </div>
-                </div>
-                {isOpen && <div>{children.slice(1)} </div>}
+      return (
+        <div>
+          <div onClick={onToggle} className='cursor-pointer flex items-center justify-between mb-2 '>
+            <div className='flex items-center'>
+              <img src={isOpen ? arrowUp : arrowDown} className='h-8 w-8'/>
+              {children[0]} 
             </div>
-        );
+            <div>
+              <p className='p-1 text-sm text-gray-600'>
+                5 sessions • 14mn
+              </p>
+            </div>
+          </div>
+          {isOpen && <div>{children.slice(1)}</div>}
+        </div>
+      );
     };
+    
 
     const AccordionTitle = ({ children }) => {
     return <div className='text-black font-semibold text-[20px] p-2 '>
@@ -53,43 +54,60 @@ import LessonDesc from './LessonDesc';
     };
 
     const AccordionContent = ({ children }) => {
-    return <div className='p-4 bg-white text-[14px] text-gray-800 '>    
+    return <div className=' flex items-center gap-2 p-4 bg-white text-[14px] text-gray-800 '>    
                 {children}
             </div>;
     };
 
     
 
-const MainCourseID = () => {
-
-  const [isOpen, setIsOpen] = useState(false);
-  const [showReadMore, setShowReadMore] = useState(false);
-  const [accordionOpenPanels, setAccordionOpenPanels] = useState([]);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    if (ref.current) {
-      setShowReadMore(ref.current.scrollHeight !== ref.current.clientHeight);
-    }
-  }, []);
-
-  const section = {
-    WebkitLineClamp: 3,
-    WebkitBoxOrient: 'vertical',
-    overflow: 'hidden',
-    display: '-webkit-box',
-  };
-
-  const generatePanelId = (sectionIndex, panelIndex) => `${sectionIndex}-${panelIndex}`;
-
-  const toggleAccordionPanel = (sectionIndex, panelIndex) => {
-    const panelId = generatePanelId(sectionIndex, panelIndex);
-    if (accordionOpenPanels.includes(panelId)) {
-      setAccordionOpenPanels(accordionOpenPanels.filter((id) => id !== panelId));
-    } else {
-      setAccordionOpenPanels([...accordionOpenPanels, panelId]);
-    }
-  };
+    const MainCourseID = () => {
+      const [isOpen, setIsOpen] = useState(false);
+      const [accordionOpenPanels, setAccordionOpenPanels] = useState([]);
+    
+      const generatePanelId = (sectionIndex) => `${sectionIndex}`;
+    
+      const toggleAccordionPanel = (sectionIndex) => {
+        const panelId = generatePanelId(sectionIndex);
+        if (accordionOpenPanels.includes(panelId)) {
+          setAccordionOpenPanels(accordionOpenPanels.filter((id) => id !== panelId));
+        } else {
+          setAccordionOpenPanels([...accordionOpenPanels, panelId]);
+        }
+      };
+    
+      const renderAccordionPanels = () => {
+        const totalSectionsToShow = isOpen ? Infinity : 5;
+        const accordionData = [
+          { title: 'Getting Started', content: 'Content for Getting Started section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+          { title: 'Lorem Ipsum', content: 'Content for Lorem Ipsum section' },
+        ];
+        return (
+          <>
+            {accordionData.slice(0, totalSectionsToShow).map((section, index) => (
+              <React.Fragment key={index}>
+                <AccordionPanel
+                  isOpen={accordionOpenPanels.includes(generatePanelId(index))}
+                  onToggle={() => toggleAccordionPanel(index)}
+                >
+                  <AccordionTitle>{section.title}</AccordionTitle>
+                  <AccordionContent>
+                    <MdOutlinePlayCircleOutline className='text-first-color h-4 w-4'/>
+                    {section.content}
+                    </AccordionContent>
+                </AccordionPanel>
+                <hr />
+              </React.Fragment>
+            ))}
+          </>
+        );
+      };
 
   return (
     <div className='md:ml-44 my-6 md:my-10 mx-6 md:mx-0'>
@@ -129,123 +147,21 @@ const MainCourseID = () => {
 
             <div className='bg-A7C5DC mt-5 rounded-xl border border-bg-toggle'>
               <div className=''>
-
-                <Accordion>
-                  <AccordionPanel>
-                    <AccordionTitle>Getting Started: </AccordionTitle>
-                    
-                    <AccordionContent>
-                        <div className='flex items-center justify-between hover:text-first-color cursor-pointer'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-                        
-                        <div className='flex items-center justify-between'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-
-                        <div className='flex items-center justify-between'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-
-                        <div className='flex items-center justify-between'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-
-                    </AccordionContent>
-                  </AccordionPanel>
-                  <hr />
-
-                  <AccordionPanel>
-                    <AccordionTitle>Lorem Ipsum:</AccordionTitle>
-                    
-                    <AccordionContent> 
-                        <div className='flex items-center justify-between'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-                    </AccordionContent>
-                  </AccordionPanel>
-                  <hr />
-
-                  <AccordionPanel>
-                    <AccordionTitle>Lorem Ipsum:</AccordionTitle>
-                    
-                    <AccordionContent>
-                        <div className='flex items-center justify-between'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-                    </AccordionContent>
-                  </AccordionPanel>
-                  <hr />
-
-                  <AccordionPanel>
-                    <AccordionTitle>Lorem Ipsum:</AccordionTitle>
-                    
-                    <AccordionContent>
-                        <div className='flex items-center justify-between'>
-                            <div className='flex items-center gap-2'> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-                    </AccordionContent>
-                  </AccordionPanel>
-                  <hr />
-
-                  <AccordionPanel>
-                    <AccordionTitle>Lorem Ipsum:</AccordionTitle>
-                    
-                    <AccordionContent>
-                        <div className='flex items-center justify-between '>
-                            <div className='flex items-center gap-2 '> 
-                                <MdOutlinePlayCircleOutline  className='h-4 w-4 text-first-color'/>
-                                <p>30-day satisfaction or money-back guarantee</p>
-                            </div>
-                            <p>03:25</p>
-                        </div>
-                    </AccordionContent>
-                  </AccordionPanel>
-                  <hr />
-                </Accordion>
-
-                </div>
+                <Accordion>{renderAccordionPanels()}</Accordion>
+              </div>
                 
                 </div>
                 <button
-                    onClick={() => {
-                      setIsOpen(!isOpen);
-                      // Reset accordion panels when toggling the main section
-                      setAccordionOpenPanels([]);
-                    }}
-                    className='w-full text-white text-md bg-first-color mt-4 py-3 rounded-lg'
-                  >
-                    {isOpen ? 'View less sections' : 'View more sections'}
-                </button>
-               
+          onClick={() => {
+            setIsOpen(!isOpen);
+            // Reset accordion panels when toggling the main section
+            setAccordionOpenPanels([]);
+          }}
+          className='w-full text-white text-md bg-first-color mt-4 py-3 rounded-lg'
+        >
+          {isOpen ? 'View less sections' : 'View more sections'}
+        </button>
+                  
              <div>
    
                <LessonDesc/>

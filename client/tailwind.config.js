@@ -21,7 +21,8 @@ module.exports = {
         'EEE':'#EEE',
         '61B4F2':'#61B4F2',
         '676767':'#676767',
-        'A7C5DC':'#A7C5DC'
+        'A7C5DC':'#A7C5DC',
+        'E5F3FE':'#E5F3FE'
       },
     },
   },
