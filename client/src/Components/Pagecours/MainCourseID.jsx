@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import arrowUp from '../assets/img/arrowUp.svg';
 import arrowDown from '../assets/img/arrowDown.svg';
 import { MdOutlinePlayCircleOutline  } from "react-icons/md";
+import LessonDesc from './LessonDesc';
     
     const Accordion = ({ children }) => {
     const [openPanels, setOpenPanels] = useState([]);
@@ -57,7 +58,38 @@ import { MdOutlinePlayCircleOutline  } from "react-icons/md";
             </div>;
     };
 
+    
+
 const MainCourseID = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+  const [showReadMore, setShowReadMore] = useState(false);
+  const [accordionOpenPanels, setAccordionOpenPanels] = useState([]);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      setShowReadMore(ref.current.scrollHeight !== ref.current.clientHeight);
+    }
+  }, []);
+
+  const section = {
+    WebkitLineClamp: 3,
+    WebkitBoxOrient: 'vertical',
+    overflow: 'hidden',
+    display: '-webkit-box',
+  };
+
+  const generatePanelId = (sectionIndex, panelIndex) => `${sectionIndex}-${panelIndex}`;
+
+  const toggleAccordionPanel = (sectionIndex, panelIndex) => {
+    const panelId = generatePanelId(sectionIndex, panelIndex);
+    if (accordionOpenPanels.includes(panelId)) {
+      setAccordionOpenPanels(accordionOpenPanels.filter((id) => id !== panelId));
+    } else {
+      setAccordionOpenPanels([...accordionOpenPanels, panelId]);
+    }
+  };
 
   return (
     <div className='md:ml-44 my-6 md:my-10 mx-6 md:mx-0'>
@@ -201,12 +233,24 @@ const MainCourseID = () => {
                 </Accordion>
 
                 </div>
+                
+                </div>
+                <button
+                    onClick={() => {
+                      setIsOpen(!isOpen);
+                      // Reset accordion panels when toggling the main section
+                      setAccordionOpenPanels([]);
+                    }}
+                    className='w-full text-white text-md bg-first-color mt-4 py-3 rounded-lg'
+                  >
+                    {isOpen ? 'View less sections' : 'View more sections'}
+                </button>
+               
+             <div>
+   
+               <LessonDesc/>
              </div>
-
-          <div>
-
-          </div>
-        </div>
-   </div>
-   )};
+           </div>
+      </div>
+      )};
 export default MainCourseID
