@@ -9,7 +9,7 @@ import contactMessage from "../assets/img/contactMessage.svg"
 
 const Contact = () => {
   return (
-    <div className='flex flex-col md:flex-row bg-bg-toggle pt-20 md:px-20 lg:px-48'>
+    <div className='flex flex-col md:flex-row h-auto bg-bg-toggle pt-20 md:px-20 lg:px-48'>
         <div className='md:w-1/2 text-white m-12'>
 
             <p className='text-4xl font-bold pl-5'>Let's discuss</p>

@@ -78,16 +78,19 @@ const MainCourse = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage]=useState(6);
 
-    // useEffect(() => {
-    //     const fetchPosts = async () => {
-    //         setLoading(true);
-    //         const res = await axios.get(datajson);
-    //         setPosts(res.data);
-    //         setLoading(false);
+    useEffect(() => {
+        const fetchPosts = async () => {
 
-    //     };
-    //     fetchPosts();
-    // }, []);
+            setLoading(true);
+            
+            const postsArray = datajson.courseList;
+    
+            setPosts(postsArray);
+            setLoading(false);
+        };
+    
+        fetchPosts();
+    }, []);
     
 
     // Get current posts

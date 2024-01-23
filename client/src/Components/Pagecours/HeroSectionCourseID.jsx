@@ -1,5 +1,4 @@
-import React from 'react'
-import { HiHome } from 'react-icons/hi'; 
+import React from 'react';
 import { Link } from 'react-router-dom';
 import image from '../assets/img/card.png'
 import { IoPlayCircle   } from "react-icons/io5";

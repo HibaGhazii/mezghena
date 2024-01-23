@@ -1,7 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
 import image from '../assets/img/card.png'
-import { FaPeopleLine } from "react-icons/fa6";
+import { FaPeopleLine,FaPeopleGroup } from "react-icons/fa6";
 import { BiSolidHeartCircle } from "react-icons/bi";
+import { FaStar,FaPlayCircle } from "react-icons/fa";
+import { SiGooglemessages } from "react-icons/si";
 
 const LessonDesc = () => {
   const purshasedCourse = [
@@ -126,11 +128,52 @@ const LessonDesc = () => {
                 <BiSolidHeartCircle  className='text-light-blue/40 h-10 w-10 shadow-lg rounded-full'/>
               </div>
               
-            </div>
-          
-          ))}
-          
+              </div>
+              
+              ))}
+      
         </div>
+      </div>
+
+      <div className=' text-center md:text-left mt-10'>
+        <p className='text-2xl font-semibold mb-1'>Instructor</p>
+        <p className='text-xl text-first-color underline font-semibold'>Jonhattan Roux | Python - C# - iOS - Android</p>
+        <p className='text-gray-600'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,</p>
+        
+        <div className='flex flex-col md:flex-row items-center gap-3 mt-4 text-gray-600'>
+          <div>
+            <img src={image} className='rounded-full w-24 h-24'/>
+          </div>
+
+          <div className='flex flex-col gap-2'>
+            <div className='flex items-center gap-2'>
+              <FaStar className='text-bg-toggle'/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,</p>
+            </div>
+
+            <div className='flex items-center gap-2'>
+              <SiGooglemessages className='text-bg-toggle'/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,</p>
+            </div>
+
+            <div className='flex items-center gap-2'>
+              <FaPeopleGroup className='text-bg-toggle'/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,</p>
+            </div>
+
+            <div className='flex items-center gap-2'>
+              <FaPlayCircle className='text-bg-toggle'/>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor,</p>
+            </div>
+
+          </div>
+        </div>
+
+        <p className='text-gray-600 mt-4 md:mr-28'>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, sit amet, consectetur adipiscing elit. Sed auctor, sit amet, consectetur adipiscing elit. Sed auctor, “.</p>
+        <p style={isOpen ? null : section} ref={ref} className='text-gray-600 mt-4 md:mr-28'>ipsum dolor sit amet, consectetur adipiscing elit : At rutrum justo libero eu nulla. In hac habitasse platea dictumst.ipsum dolor sit amet, consectetur adipiscing elit : At rutrum justo libero eu nulla. In hac habitasse platea dictumst.ipsum dolor sit amet, consectetur adipiscing elit : At rutrum justo libero eu nulla. In hac habitasse platea dictumst.</p>
+        <button onClick={() => setIsOpen(!isOpen)} className='text-md text-first-color rounded-lg'>
+                {isOpen ? "View less..." : "View more..."}
+        </button>
       </div>
     </div>
   )
