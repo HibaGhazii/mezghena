@@ -7,6 +7,7 @@ import SignUp from './Components/PageLogin/SignUp';
 import Contact from './Components/ContactForm/Contact';
 import Courses from './Components/Pagecours/Courses';
 import CourseID from './Components/Pagecours/CourseID';
+import Service from './Components/PageService/Service';
 
 function App() {
   return (
@@ -20,7 +21,8 @@ function App() {
           <Route path="/signup" component={SignUp}/>
           <Route path='/contact' component={Contact}/>
           <Route path='/courses' component={Courses}/>
-          <Route path='/CourseID' component={CourseID}/> 
+          <Route path='/CourseID' component={CourseID}/>
+          <Route path='/service' component={Service}/> 
         </Switch>
         
     </Router>

@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: { 
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
+      },
       colors: {
         'bg-toggle':'#023F6D',
         'first-color':'#0664AB',
