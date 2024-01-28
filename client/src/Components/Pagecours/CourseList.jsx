@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import { CiHeart } from "react-icons/ci";
 
 const CourseList = ({posts,loading}) => {
-  
+    
     if(loading){
       return <p className='text-xl'>Loading...</p>
     }
@@ -21,13 +22,20 @@ const CourseList = ({posts,loading}) => {
                                             <p className='text-sm'>{course.description}</p>
                                             <p className='text-xs text-gray-500 my-2'>{course.professor}</p>
 
-                                            <div className='flex gap-2 mt-4 text-gray-500 text-xs'>
+                                            <div className="text-sm">⭐⭐⭐⭐⭐ <span className="text-gray-500 text-xs">( 2345 )</span></div>
+
+                                            <div className='flex gap-2 mt-2 text-gray-500 text-xs'>
                                                 <p>{course.duration} Hours •</p>
                                                 <p>{course.session} Session •</p>
                                                 <p>{course.level}</p>
                                             </div>
 
-                                            <button className='bg-61B4F2 text-dark-blue rounded-full px-6 py-1 text-sm mt-2'>Best Seller</button>
+                                            <div className="flex gap-1">
+                                                <button className='bg-61B4F2 text-dark-blue rounded-full px-14 py-1 text-sm mt-2 hover:bg-first-color/30'>Best Seller</button>
+                                                <button className='bg-second-color/40 text-dark-blue rounded-full px-12 py-1 text-sm mt-2 hover:bg-second-color'>Recomended</button>
+                                                <button className='flex items-center gap-1 bg-second-color text-dark-blue rounded-full px-6 py-1 text-sm mt-2 hover:bg-second-color/50'>Add to favorite <CiHeart/></button>
+
+                                            </div>
                                         </div>
 
                                         <div className='text-first-color font-semibold'>

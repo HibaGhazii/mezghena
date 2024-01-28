@@ -10,6 +10,7 @@ import { AiOutlineFileSearch } from "react-icons/ai";
 import { BsDownload,BsFillSendFill } from "react-icons/bs";
 import { HiArrowPath } from "react-icons/hi2";
 import { PiCertificateLight } from "react-icons/pi";
+import { CiHeart } from "react-icons/ci";
 
 const HeroSectionCourseID = () => {
   return (
@@ -112,7 +113,10 @@ const HeroSectionCourseID = () => {
                     </div>
 
                     
-                    <button className='w-full text-bg-toggle flex items-center justify-center gap-2 border border-first-color h-12 rounded-lg text-lg font-semibold mb-8'>Share <BsFillSendFill className='mt-1'/></button>
+                    <div>
+                        <div className='border border-first-color '><CiHeart className=''/></div>
+                        <button className='w-full text-bg-toggle flex items-center justify-center gap-2 border border-first-color h-12 rounded-lg text-lg font-semibold mb-8'>Share <BsFillSendFill className='mt-1'/></button>
+                    </div>
                     
                 </div>
             </div>
