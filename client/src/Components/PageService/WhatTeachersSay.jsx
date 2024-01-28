@@ -48,7 +48,7 @@ const WhatTeachersSay = () => {
   }, []);
 
   const startSlider = () => {
-    setInterval(nextSlide, 5000);
+    setInterval(nextSlide, 2000);
   };
 
   return (
@@ -63,7 +63,7 @@ const WhatTeachersSay = () => {
           <div className='flex justify-center items-center sm:mx-80 lg:gap-2 mt-14'>
               {/* Left arrow for previous slide */}
               <BsArrowLeftCircleFill
-                className='text-first-color w-[6rem] h-[2rem] drop-shadow-2xl cursor-pointer'
+                className='text-first-color md:w-[6rem] w-[2rem] h-[2rem] drop-shadow-2xl cursor-pointer'
                 onClick={prevSlide}
               />
             
@@ -76,13 +76,13 @@ const WhatTeachersSay = () => {
                   </div>
                 ))}
                 {slideComment.slice(currentSlide, currentSlide + 1).map((slide, idx) => (
-                  <div key={idx} className={`text-center p-5 rounded-lg shadow-md shadow-gray-500 mx-3 w-96 h-56 md:mx-1 bg-first-color/10 md:flex md:flex-col md:mb-10 lg:flex lg:flex-col`}>
+                  <div key={idx} className={`text-center p-5 rounded-lg shadow-md shadow-gray-500 mx-3 md:w-96 w-80 h-56 md:mx-1 bg-first-color/10 md:flex md:flex-col md:mb-10 lg:flex lg:flex-col`}>
                     {/* Comment */} 
                     <div>
                       <p className='font-Roboto text-585858'>“{slide.comment}”</p>
                     </div>
                     {/* Student information */}
-                    <div className='flex flex-row justify-center text-left gap-4 mt-2 mb-6 text-gray-400'>
+                    <div className='flex flex-row text-left gap-4 mt-4 mb-6 text-gray-400'>
                       <div>
                         <p className='text-black font-bold font-Roboto'>{slide.name}</p>
                         <p className='text-first-color font-Roboto'>{slide.speciality}</p>
@@ -92,7 +92,7 @@ const WhatTeachersSay = () => {
                 ))}
               </div>
               <BsArrowRightCircleFill
-                className='text-first-color w-[6rem] h-[2rem] drop-shadow-2xl cursor-pointer'
+                className='text-first-color md:w-[6rem] w-[2rem] h-[2rem] drop-shadow-2xl cursor-pointer'
                 onClick={nextSlide}
               />
 

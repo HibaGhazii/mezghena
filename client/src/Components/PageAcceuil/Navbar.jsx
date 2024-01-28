@@ -3,9 +3,35 @@ import React from 'react';
 import { Navbar } from 'flowbite-react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/img/mezghena-logo.svg"
+// import { useTranslation, initReactI18next } from 'react-i18next';  // Import i18n and initReactI18next
+// import i18n from 'i18next';  // Import i18n
+
+// i18n
+//   .use(initReactI18next)
+//   .init({
+//     backend: {
+//       loadPath: '/locales/{{lng}}/{{ns}}.json', // Adjust the path to your server API
+//     },
+//     lng: 'en', // Default language
+//     fallbackLng: 'en', // Fallback language
+//     debug: true,
+//     interpolation: {
+//       escapeValue: false,
+//     },
+//   });
 
 function NavbarComponent() {
   
+  // const { t } = useTranslation();
+
+  // const handleChangeLanguage = async (lang) => {
+  //   try {
+  //     await i18n.changeLanguage(lang);
+  //   } catch (error) {
+  //     console.error('Error changing language:', error);
+  //   }
+  // };
+
   return (
     <Navbar fluid rounded className='bg-bg-toggle md:flex md:items-center lg:block lg:px-28 md:bg-inherit lg:bg-inherit absolute w-full md:text-white lg:text-white '>
       {/* Navbar Brand with Mezghena Logo */}
@@ -33,7 +59,9 @@ function NavbarComponent() {
           <div className='flex gap-1 items-center mt-2'>
             <Link to="/login" className='bg-first-color rounded-lg border-none focus:outline-none py-1.5 px-8 active:bg-dark-blue/20 hover:bg-002D62'>Register</Link>
             <select
-              className='bg-second-color rounded-lg border-none focus:outline-none'>
+              className='bg-second-color rounded-lg border-none focus:outline-none'
+              > 
+              {/* onChange={(e) => handleChangeLanguage(e.target.value)} */}
               <option className='bg-white md:text-black' value="En">En</option>
               <option className='bg-white md:text-black' value="Fr">Fr</option>
             </select>

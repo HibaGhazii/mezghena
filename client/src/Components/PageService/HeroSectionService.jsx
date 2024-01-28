@@ -53,7 +53,7 @@ const HeroSectionService = () => {
           <p className='my-6 mr-10 text-sm'>Build new skills for that “this is my year” feeling with courses, certificates, and degrees from world-class universities and companies.</p>
           
           <div className='flex items-center gap-4 md:gap-8 text-lg'>
-            <button className='bg-second-color rounded-xl px-4 py-2'>Become a Teacher</button>
+            <Link to='/signup' className='bg-second-color rounded-xl px-4 py-2'>Become a Teacher</Link>
 
             <Link className='flex items-center gap-3' to='https://www.youtube.com/watch?v=fq7k_gVV5x8&t=1s'>
                 <BsPlayCircle className='text-second-color h-8 w-8'/>
