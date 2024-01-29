@@ -113,9 +113,9 @@ const HeroSectionCourseID = () => {
                     </div>
 
                     
-                    <div>
-                        <div className='border border-first-color '><CiHeart className=''/></div>
-                        <button className='w-full text-bg-toggle flex items-center justify-center gap-2 border border-first-color h-12 rounded-lg text-lg font-semibold mb-8'>Share <BsFillSendFill className='mt-1'/></button>
+                    <div className='flex gap-3'>
+                        <button className='w-[20%] text-bg-toggle flex items-center justify-center gap-2 border border-first-color h-12 rounded-lg text-lg font-semibold mb-8'><CiHeart className='w-7 h-7'/></button>
+                        <button className='w-[80%] text-bg-toggle flex items-center justify-center gap-2 border border-first-color h-12 rounded-lg text-lg font-semibold mb-8'>Share <BsFillSendFill className='mt-1'/></button>
                     </div>
                     
                 </div>

@@ -101,7 +101,7 @@ const LessonDesc = () => {
         <p className='text-2xl font-semibold mb-4'>What The participants also purchased</p>
         <div className='flex flex-col gap-4 text-sm'>
           {purshasedCourse.map((course, index) => (
-            <div key={index} className='flex gap-4'> 
+            <div key={index} className={`flex gap-4 ${index !== purshasedCourse.length - 1 ? 'border-b pb-4 mb-4' : ''}`}> 
               <div className='w-24 h-16'>
                 <img src={course.image} alt={course.title} className='' />
               </div>
@@ -112,7 +112,7 @@ const LessonDesc = () => {
                 <p><span className='text-first-color'>{course.hours} hours in total •</span> Update 11/2023</p>
                 
               </div>
-
+              
               <div className='flex gap-8'>
                 <div className='flex gap-1'>
                   <FaPeopleLine className='text-bg-toggle mt-0.5'/>
@@ -128,9 +128,9 @@ const LessonDesc = () => {
                 <BiSolidHeartCircle  className='text-light-blue/40 h-10 w-10 shadow-lg rounded-full'/>
               </div>
               
-              </div>
+            </div>
               
-              ))}
+          ))}
       
         </div>
       </div>
