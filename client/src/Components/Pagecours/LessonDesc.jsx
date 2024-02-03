@@ -101,7 +101,7 @@ const LessonDesc = () => {
         <p className='text-2xl font-semibold mb-4'>What The participants also purchased</p>
         <div className='flex flex-col gap-4 text-sm'>
           {purshasedCourse.map((course, index) => (
-            <div key={index} className={`flex gap-4 ${index !== purshasedCourse.length - 1 ? 'border-b pb-4 mb-4' : ''}`}> 
+            <div key={index} className={`flex gap-3 ${index !== purshasedCourse.length - 1 ? 'border-b pb-3 mb-3' : ''}`}> 
               <div className='w-24 h-16'>
                 <img src={course.image} alt={course.title} className='' />
               </div>

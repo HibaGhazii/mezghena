@@ -1,11 +1,51 @@
 import React, { useState } from 'react'
 import student from '../assets/img/howitwork.png'
+import student2 from '../assets/img/category1.jpg'
+import student3 from '../assets/img/category2.jpg'
 import CountUp from 'react-countup'
 import ScrollTrigger from 'react-scroll-trigger'
 
 const MainService = () => {
 
   const [count,setCount] = useState(false);
+  const [selectedButton, setSelectedButton] = useState('Program Yourself');
+
+  const handleButtonClick = (button) => {
+    setSelectedButton(button);
+  };
+
+  const renderContent = () => {
+    switch (selectedButton) {
+      case 'Program Yourself':
+        return (
+          <>
+            <p className='text-gray-600'>Start with your passion and knowledge. Then, choose a promising topic using our Marketplace Insights tool. The way you teach and what you bring to it is entirely up to you.</p>
+            <p className='text-xl font-bold mt-4'>Mezghena helps you</p>
+            <p className='text-gray-600 mt-4'>We offer numerous resources on how to create your first course. Additionally, our trainer dashboard and program pages help you stay organized</p>
+          </>
+        );
+      case 'Record your Course':
+        return (
+          <>
+            <p className='text-gray-600'>Start with your passion and knowledge. Then, choose a promising topic using our Marketplace Insights tool. The way you teach and what you bring to it is entirely up to you.</p>
+            <p className='text-xl font-bold mt-4'>Mezghena helps you</p>
+            <p className='text-gray-600 mt-4'>We offer numerous resources on how to create your first course. Additionally, our trainer dashboard and program pages help you stay organized</p>
+          </>
+        );
+        break;
+      case 'Launch your Course':
+        return (
+          <>
+            <p className='text-gray-600'>Start with your passion and knowledge. Then, choose a promising topic using our Marketplace Insights tool. The way you teach and what you bring to it is entirely up to you.</p>
+            <p className='text-xl font-bold mt-4'>Mezghena helps you</p>
+            <p className='text-gray-600 mt-4'>We offer numerous resources on how to create your first course. Additionally, our trainer dashboard and program pages help you stay organized</p>
+          </>
+        );
+        break;
+        default:
+          return null;
+    }
+  };
 
   return (
     <div>
@@ -16,19 +56,19 @@ const MainService = () => {
       </div>
 
       <div className='text-white text-center md:flex md:gap-4 justify-center mt-14'>
-        <button className='bg-bg-toggle mr-2 mb-3 md:mr-0 md:mb-0 px-10 py-2 rounded-lg hover:bg-second-color'>Program Yourself</button>
-        <button className='bg-bg-toggle px-10 py-2 rounded-lg hover:bg-second-color'>Record your Course</button>
-        <button className='bg-bg-toggle px-10 py-2 rounded-lg hover:bg-second-color'>Launch your Course</button>
+        <button className={`bg-bg-toggle mr-2 mb-3 md:mr-0 md:mb-0 px-10 py-2 rounded-lg hover:bg-second-color ${selectedButton === 'Program Yourself' && 'bg-second-color'}`} onClick={() => handleButtonClick('Program Yourself')}>Program Yourself</button>
+        <button className={`bg-bg-toggle px-10 py-2 rounded-lg hover:bg-second-color ${selectedButton === 'Record your Course' && 'bg-second-color'}`} onClick={() => handleButtonClick('Record your Course')}>Record your Course</button>
+        <button className={`bg-bg-toggle px-10 py-2 rounded-lg hover:bg-second-color ${selectedButton === 'Launch your Course' && 'bg-second-color'}`} onClick={() => handleButtonClick('Launch your Course')}>Launch your Course</button>
       </div>
 
       <div className='flex gap-3 mt-16 md:mx-[450px] font-inter'>
-        <div className=' bg-first-color/10 rounded-xl shadow-xl p-8 mx-6 md:mx-0'>
-          <p className='text-gray-600'>Start with your passion and knowledge. Then, choose a promising topic using our Marketplace Insights tool. The way you teach and what you bring to it is entirely up to you.</p>
-          <p className='text-xl font-bold mt-4'>Mezghena helps you</p>
-          <p className='text-gray-600 mt-4'>We offer numerous resources on how to create your first course. Additionally, our trainer dashboard and program pages help you stay organized</p>
+        <div className='bg-first-color/10 rounded-xl shadow-xl p-8 mx-6 md:mx-0'>
+          {renderContent()}
         </div>
         <div className='hidden md:block'>
-          <img src={student} className=' brightness-75 backdrop-brightness-50 rounded-xl w-[700px] h-[300px]'/>
+          {selectedButton === 'Program Yourself' && <img src={student} className='brightness-75 backdrop-brightness-50 rounded-xl w-[700px] h-[300px]' alt='Program Yourself' />}
+          {selectedButton === 'Record your Course' && <img src={student2} className='brightness-75 backdrop-brightness-50 rounded-xl w-[700px] h-[300px]' alt='Record your Course' />}
+          {selectedButton === 'Launch your Course' && <img src={student3} className='brightness-75 backdrop-brightness-50 rounded-xl w-[700px] h-[300px]' alt='Launch your Course' />}
         </div>
       </div>
     </div>

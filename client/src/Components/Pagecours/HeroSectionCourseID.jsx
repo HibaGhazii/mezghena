@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import image from '../assets/img/card.png'
 import { IoPlayCircle   } from "react-icons/io5";
@@ -13,6 +13,19 @@ import { PiCertificateLight } from "react-icons/pi";
 import { CiHeart } from "react-icons/ci";
 
 const HeroSectionCourseID = () => {
+
+    const [modal, setModal] = useState(false);
+
+    const toggleModal = () => {
+        setModal(!modal)
+    };
+
+    if(modal) {
+        document.body.classList.add('active-modal');
+    }else{
+        document.body.classList.remove('active-modal')
+    }
+
   return (
     <div className="text-white flex flex-col items-center md:flex-row pb-12 pt-24 md:pt-32 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover">
       
@@ -44,6 +57,7 @@ const HeroSectionCourseID = () => {
                     <p>Made by <span className='text-second-color'>Gallen Collignon</span></p>
                     <p>Participants: <span className='text-second-color'>3345</span></p>
                 </div>
+                <div>⭐⭐⭐⭐⭐<span className="text-second-color text-sm" > ( 2345 )</span></div>
             </div>
         </div>
 
@@ -64,7 +78,9 @@ const HeroSectionCourseID = () => {
                     </div>
 
                     <button className='bg-first-color w-full h-12 rounded-lg text-lg font-semibold mt-8'>Add to cart</button>
-                    <button className='bg-second-color w-full h-12 rounded-lg text-lg font-semibold '>Buy now</button>
+                    <button className='bg-second-color w-full h-12 rounded-lg text-lg font-semibold ' onClick={toggleModal}>Buy now</button>
+
+                    
                 
                     <p className='text-center text-gray-800 text-xs mt-6'>30-day satisfaction or money-back guarantee</p>
                 </div>
@@ -121,6 +137,71 @@ const HeroSectionCourseID = () => {
                 </div>
             </div>
         </div>
+        { modal && (
+            <div className='fixed top-20 text-black'> 
+                        
+                            <div onClick={toggleModal} className='py-12 rounded-[3px] px-20 bg-white'></div>
+                                <div className=''> 
+                                    <div>
+                                        <p>cart</p>
+                                        <p>checkout</p>
+                                    </div>
+
+                                    <div className=''>
+                                        <div className=''>
+                                            <p>Shipping Address</p>
+                                            <div className='border-2 rounded-[4px] border-first-color'>
+                                                <input type="radio" className='w-4 h-4' checked/> Add new address
+                                                <form action="" className='text-left'>
+                                                    <div className='flex gap-2'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="firstName">First Name</label>
+                                                            <input type="text" className='rounded-[4px]'/>
+                                                        </div>
+
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="LastName">Last Name</label>
+                                                            <input type="text" className='rounded-[4px]'/>
+                                                        </div>
+                                                    </div> 
+                                                    <div className='flex flex-col'>
+                                                        <label htmlFor="address">Street Address</label>
+                                                        <input type="text" className='rounded-[4px]'/>
+                                                    </div>
+                                                    <div className='flex gap-2'>
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="aptNumber">Apt Number</label>
+                                                            <input type="text" className='rounded-[4px]'/>
+                                                        </div>
+
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="state">State</label>
+                                                            <input type="text" className='rounded-[4px]'/>
+                                                        </div>
+
+                                                        <div className='flex flex-col'>
+                                                            <label htmlFor="zip">Zip</label>
+                                                            <input type="text" className='rounded-[4px]'/>
+                                                        </div>
+                                                    </div>
+                                                    <div className='flex justify-between mt-4'> 
+                                                        <button className='border border-gray-500 px-8 py-1 rounded-[4px]'>Cancel</button>
+                                                        <button className='bg-first-color text-white py-1 px-20 rounded-[4px]'>Save this Address</button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div className=''> 
+
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <button className='absolute top-[10px] right-[30px] py-[7px]' onClick={toggleModal}>CLOSE</button>
+                            
+        
+            </div>
+        )}
     </div>
   )
 }

@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import howitwork from "../assets/img/howitwork.png"
 import signUp from "../assets/img/signUp.svg"
 import getAccess from "../assets/img/getAccess.svg"
 import question from "../assets/img/question.svg"
 import result from "../assets/img/result.svg"
+import { Modal } from 'flowbite-react';
+
 const HowItWorks = () => {
- 
+  
+  const [openModal, setOpenModal] = useState(false);
+    
   return (
     <div className='pt-14'>
       
@@ -54,10 +58,29 @@ const HowItWorks = () => {
         {/* Right section with an image and a button */}
         <div className='lg:w-full lg:h-full relative lg:block hidden'>
           <img src={howitwork} className='w-full h-auto max-w-xl rounded-lg lg:max-w-3xl lg:max-h-[400px]' alt="How It Works Image"/>
-          <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-28 lg:-translate-x-[75%] text-center'>
+          <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 lg:translate-y-28 lg:-translate-x-[65%] text-center flex gap-2'>
             <button className='bg-first-color text-white rounded-xl px-4 py-2 md:px-6 md:py-2 lg:px-8 lg:py-3 lg:text-lg'>Start Now</button>
+            <button className='bg-second-color text-white rounded-xl px-4 py-2 md:px-6 md:py-2 lg:px-8 lg:py-3 lg:text-lg' onClick={() => setOpenModal(true)}>Watch Video</button>
           </div>
         </div>
+
+        <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+          <Modal.Header>How it works ?</Modal.Header> 
+          <Modal.Body>
+            <div>
+              <iframe
+                width="100%"
+                height="315"
+                src='https://www.youtube.com/embed/8vTCyhDyRjg' //YouTube video URLs should be in the format https://www.youtube.com/embed/VIDEO_ID
+                title="Embedded Video"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </Modal.Body>
+          
+        </Modal>
 
       </div>
 

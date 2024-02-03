@@ -5,8 +5,13 @@ import page from '../assets/img/Orion_page.svg'
 import megaphone from '../assets/img/Orion_megaphone.svg'
 import { BsPlayCircle } from "react-icons/bs";
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import { Modal } from 'flowbite-react';
+import { useState } from 'react'
 
 const HeroSectionService = () => {
+
+  const [openModal, setOpenModal] = useState(false);
+
   return (
     <div className="text-white flex flex-col md:flex-row justify-center items-center pt-20 pb-5 md:pt-28 bg-[url('../src/Components/assets/img/Hero-Section.png')] rounded-b-[60px] bg-cover px-10 md:pl-40">
       
@@ -55,10 +60,27 @@ const HeroSectionService = () => {
           <div className='flex items-center gap-4 md:gap-8 text-lg'>
             <Link to='/signup' className='bg-second-color rounded-xl px-4 py-2'>Become a Teacher</Link>
 
-            <Link className='flex items-center gap-3' to='https://www.youtube.com/watch?v=fq7k_gVV5x8&t=1s'>
-                <BsPlayCircle className='text-second-color h-8 w-8'/>
+            <button onClick={() => setOpenModal(true)} className='flex items-center gap-3'>
+                <BsPlayCircle className='text-second-color h-8 w-8' />
                 <p>Watch Video</p>
-            </Link>
+            </button>
+            <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+              <Modal.Header>Watch it now !</Modal.Header> 
+              <Modal.Body>
+                <div>
+                  <iframe
+                    width="100%"
+                    height="315"
+                    src='https://www.youtube.com/embed/8vTCyhDyRjg' //YouTube video URLs should be in the format https://www.youtube.com/embed/VIDEO_ID
+                    title="Embedded Video"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </Modal.Body>
+              
+            </Modal>
           </div>
 
           <p className='text-gray-300 mt-10 md:mt-16'>Recent engagement</p>
