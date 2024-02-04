@@ -14,17 +14,37 @@ import { IoPlayCircle   } from "react-icons/io5";
 import { MdOutlineWatchLater,MdOutlinePlayCircleOutline  } from "react-icons/md";
 import { useState } from 'react';
 import { FaCcVisa } from "react-icons/fa6";
+import edahabia from '../assets/img/edahabia.jpeg'
+import cib from '../assets/img/cib.jpg'
+import paypal from '../assets/img/paypal.jpg'
 
 const Payment = () => {
 
     const [openModal, setOpenModal] = useState(false);
-    const steps = ['1','2'];
+    const [activeStep, setActiveStep] = useState(1);
+
+    const steps = ['Cart', 'Checkout'];
+
+    const handleStepChange = (step) => {
+        setActiveStep(step);
+    };
+
+    const handleNext = () => {
+        const nextStep = activeStep + 1;
+        if (nextStep <= steps.length) {
+          setActiveStep(nextStep);
+        }
+      };
     
-    const [email, setEmail] = useState('');
+      const handleBack = () => {
+        const prevStep = activeStep - 1;
+        if (prevStep >= 1) {
+          setActiveStep(prevStep);
+        }
+      };
 
     function onCloseModal() {
         setOpenModal(false);
-        setEmail('');
     }
 
   return (
@@ -109,15 +129,31 @@ const Payment = () => {
         <div className='fixed top-20 text-black'> 
 
                         
-                        <Modal show={openModal} size="5xl" onClose={onCloseModal} popup>
+                        <Modal show={openModal} size="2xl" onClose={onCloseModal} popup>
                             <Modal.Header>
-                                
+                            <Stepper
+                                activeStep={activeStep}
+                                steps={steps}
+                                onSelect={handleStepChange}
+                                connectorStateColors={true}
+                                connectorStyleConfig={{
+                                completedColor: '#4F46E5',
+                                activeColor: '#4F46E5',
+                                disabledColor: '#E0E0E0',
+                                }}
+                                styleConfig={{
+                                activeBgColor: '#4F46E5',
+                                completedBgColor: '#4F46E5',
+                                disabledBgColor: '#E0E0E0',
+                                borderRadius: '5px',
+                                }}
+                            />
                             </Modal.Header>
                             
                             <Modal.Body>
                             <div className="flex">
                                 
-                               <div className='w-1/2 '>
+                               <div className=' '>
                                     <p className='font-semibold text-lg mb-4'>Shipping Address</p>
                                     <div className='border-2 border-first-color rounded-[4px] px-6 flex flex-col gap-4'>
                                         <div className='flex gap-2 items-center mt-4'>
@@ -161,34 +197,126 @@ const Payment = () => {
 
                                         </form>
 
-                                        <div className='flex justify-between gap-4 mt-5 mb-10 '>
+                                        <div className='flex justify-between gap-4 mt-5 pb-10 '>
                                             <button className='text-black border border-gray-400 bg-white rounded-[6px] w-[30%] py-2'>Cancel</button>
                                             <button className='text-white bg-first-color rounded-[6px] w-[70%]'>Save this Address</button>
                                         </div>
                                     </div>
 
-                               </div>
+                                    <div className='mt-8'>
+                                        <p className='font-semibold text-lg mb-4'>Payment Method</p>
+                                        <div className='border-2 border-first-color rounded-[4px] px-6 flex flex-col gap-4'>
+                                            <div className='flex gap-2 items-center mt-4'>
+                                                <input type="radio" checked className='w-6 h-6 text-first-color'/>
+                                                <p> Credit or Debit card</p>
+                                            </div> 
 
-                               <div className='w-1/2'>
-                                <p className='font-semibold text-lg mb-4'>Payment Method</p>
-                                <div className='border-2 border-first-color rounded-[4px] px-6 flex flex-col gap-4'>
-                                    <div className='flex gap-2 items-center mt-4'>
-                                        <input type="radio" checked className='w-6 h-6 text-first-color'/>
-                                        <p> Credit or Debit card</p>
+                                            <form action="" className='space-y-6'>
+                                                <div className='flex items-center relative'>
+                                                    <input type="text" placeholder='●●●● ●●●● ●●●● 3458' className='border border-gray-300 rounded-[6px] w-full'/>
+                                                    <FaCcVisa className='w-10 h-10 text-first-color absolute right-2'/> 
+                                                </div>
+
+                                                <div className='space-y-3'>
+                                                    <div className='flex gap-1.5'>
+                                                        <input type='date' name="date" id="date" required className='border border-gray-300 rounded-[6px] w-full' />
+                                                        <input type='password' name="password" id="password" placeholder='●●●●' required className='border border-gray-300 rounded-[6px] w-full' />
+                                                        <input type='text' name="number" id="number" placeholder='23456' required className='border border-gray-300 rounded-[6px] w-full' />
+                                                    </div>
+                                                    <div className='text-sm space-y-2'>
+                                                        <div className='flex items-center gap-2'>
+                                                            <input type="checkbox" className='border border-gray-300 text-first-color rounded-[4px] w-5 h-5'/>
+                                                            <p>Save this credit card for later use</p>
+                                                        </div>
+                                                        <div className='flex items-center gap-2'>
+                                                            <input type="checkbox" className='border border-gray-300 text-first-color rounded-[4px] w-5 h-5'/>
+                                                            <p>Billing address same as shipping address</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div className=''>
+                                                <label htmlFor="Street Address">Street Address</label><br />
+                                                <input type='text' name="address" id="address" required className='border border-gray-300 rounded-[6px] w-full' />
+                                                </div>
+
+                                                <div className='flex gap-4'>
+                                                    <div>
+                                                        <label htmlFor="Apt Number">Apt Number</label><br />
+                                                        <input type='text' name="AptNumber" id="AptNumber" required className='border border-gray-300 rounded-[6px] w-full' />
+                                                    </div>
+
+                                                    <div>
+                                                        <label htmlFor="State">State</label><br />
+                                                        <input type='text' name="State" id="State" required className='border border-gray-300 rounded-[6px] w-full' />
+                                                    </div>
+
+                                                    <div>
+                                                        <label htmlFor="Zip">Zip</label><br />
+                                                        <input type='text' name="Zip" id="Zip" required className='border border-gray-300 rounded-[6px] w-full' />
+                                                    </div>
+                                                </div>
+
+                                                <div className='flex justify-between gap-4 mt-5 pb-10'>
+                                                    <button className='text-black border border-gray-400 bg-white rounded-[6px] w-[30%] py-2'>Cancel</button>
+                                                    <button className='text-white bg-first-color rounded-[6px] w-[70%]'>Save this Address</button>
+                                                </div>
+                                                
+                                            </form>
+                                        </div>
+                                    </div>
+
+                                    <div className='space-y-6 mt-10'>
+                                        <div className='flex justify-between shadow-lg rounded-lg px-4 py-5'>
+                                            <div className='flex items-center space-x-2'>
+                                                <input type="radio" name="paymentMethod" className='text-first-color rounded-full border border-gray-300 w-6 h-6'/>
+                                                <p>Edahabia</p>
+                                            </div>
+                                            <div>
+                                                <img src={edahabia} alt="Carte edahabia" className='w-16'/>
+                                            </div>
+                                        </div>
+
+                                        <div className='flex justify-between shadow-lg rounded-lg px-4 py-3'>
+                                            <div className='flex items-center space-x-2'>
+                                                <input type="radio" name="paymentMethod" className='text-first-color rounded-full border border-gray-300 w-6 h-6'/>
+                                                <p>Cib</p>
+                                            </div>
+                                            <div>
+                                                <img src={cib} alt="Cib" className='w-20'/>
+                                            </div>
+                                        </div>
+
+                                        <div className='flex justify-between shadow-lg rounded-lg px-4 py-3'>
+                                            <div className='flex items-center space-x-2'>
+                                                <input type="radio" name="paymentMethod" className='text-first-color rounded-full border border-gray-300 w-6 h-6'/>
+                                                <p>Paypal</p>
+                                            </div>
+                                            <div>
+                                                <img src={paypal} alt="Paypal" className='w-20'/>
+                                            </div>
+                                        </div>
                                     </div> 
+                                    {activeStep > 1 && (
+                                        <button onClick={handleBack} className='text-black border py-3 border-gray-400 bg-white rounded-[6px] w-[30%]'>
+                                            Back
+                                        </button>
+                                        )}
+                                        {activeStep < steps.length ? (
+                                        <button onClick={handleNext} className='text-white bg-first-color py-3 mt-4 rounded-[6px] w-[50%]'>
+                                            Next
+                                        </button>
+                                        ) : (
+                                        <button className='text-white bg-first-color py-3 mt-4 rounded-[6px] w-[70%]' onClick={onCloseModal}>
+                                            Finish
+                                        </button>
+                                    )}
 
-                                    <form action="">
-                                        <div className='flex items-center relative'>
-                                            <input type="text" placeholder='●●●● ●●●● ●●●● 3458' className='border border-gray-300 rounded-[6px] w-full'/>
-                                            <FaCcVisa className='w-10 h-10 text-first-color absolute right-2'/> 
-                                        </div>
-
-                                        <div>
-                                            
-                                        </div>
-                                    </form>
-                                </div>
                                </div>
+
+                               {/* <div className='w-1/2'>
+                                
+                               </div> */}
                             </div>
                             </Modal.Body>
                         </Modal>
