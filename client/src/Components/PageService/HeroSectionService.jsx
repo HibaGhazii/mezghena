@@ -64,8 +64,8 @@ const HeroSectionService = () => {
                 <BsPlayCircle className='text-second-color h-8 w-8' />
                 <p>Watch Video</p>
             </button>
-            <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
-              <Modal.Header>Watch it now !</Modal.Header> 
+            <Modal size='3xl' dismissible show={openModal} onClose={() => setOpenModal(false)}>
+              <Modal.Header></Modal.Header> 
               <Modal.Body>
                 <div>
                   <iframe

@@ -64,7 +64,7 @@ const HowItWorks = () => {
           </div>
         </div>
 
-        <Modal dismissible show={openModal} onClose={() => setOpenModal(false)}>
+        <Modal size='3xl' dismissible show={openModal} onClose={() => setOpenModal(false)}>
           <Modal.Header>How it works ?</Modal.Header> 
           <Modal.Body>
             <div>

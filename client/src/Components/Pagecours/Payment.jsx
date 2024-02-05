@@ -1,5 +1,4 @@
 import React from 'react'
-import { Stepper } from 'react-form-stepper';
 import { FaRegFileLines } from "react-icons/fa6";
 import { CiCircleQuestion } from "react-icons/ci";
 import { AiOutlineFileSearch } from "react-icons/ai";
@@ -17,6 +16,7 @@ import { FaCcVisa } from "react-icons/fa6";
 import edahabia from '../assets/img/edahabia.jpeg'
 import cib from '../assets/img/cib.jpg'
 import paypal from '../assets/img/paypal.jpg'
+import Stepper from '../Pagecours/Stepper';
 
 const Payment = () => {
 
@@ -131,33 +131,20 @@ const Payment = () => {
                         
                         <Modal show={openModal} size="2xl" onClose={onCloseModal} popup>
                             <Modal.Header>
-                            <Stepper
-                                activeStep={activeStep}
-                                steps={steps}
-                                onSelect={handleStepChange}
-                                connectorStateColors={true}
-                                connectorStyleConfig={{
-                                completedColor: '#4F46E5',
-                                activeColor: '#4F46E5',
-                                disabledColor: '#E0E0E0',
-                                }}
-                                styleConfig={{
-                                activeBgColor: '#4F46E5',
-                                completedBgColor: '#4F46E5',
-                                disabledBgColor: '#E0E0E0',
-                                borderRadius: '5px',
-                                }}
-                            />
+                                <Stepper activeStep={activeStep} steps={steps} />
                             </Modal.Header>
                             
                             <Modal.Body>
-                            <div className="flex">
+                            <div className="">
                                 
                                <div className=' '>
+                               {activeStep === 1 && (
+
+                                <div>
                                     <p className='font-semibold text-lg mb-4'>Shipping Address</p>
                                     <div className='border-2 border-first-color rounded-[4px] px-6 flex flex-col gap-4'>
                                         <div className='flex gap-2 items-center mt-4'>
-                                            <input type="radio" className='w-6 h-6 text-first-color'/>
+                                            <input checked type="radio" className='w-6 h-6 text-first-color'/>
                                             <p> Add new Address</p>
                                         </div>
                                         <form action="" className=' space-y-6'>
@@ -296,27 +283,72 @@ const Payment = () => {
                                                 <img src={paypal} alt="Paypal" className='w-20'/>
                                             </div>
                                         </div>
-                                    </div> 
-                                    {activeStep > 1 && (
-                                        <button onClick={handleBack} className='text-black border py-3 border-gray-400 bg-white rounded-[6px] w-[30%]'>
-                                            Back
-                                        </button>
-                                        )}
-                                        {activeStep < steps.length ? (
-                                        <button onClick={handleNext} className='text-white bg-first-color py-3 mt-4 rounded-[6px] w-[50%]'>
-                                            Next
-                                        </button>
-                                        ) : (
-                                        <button className='text-white bg-first-color py-3 mt-4 rounded-[6px] w-[70%]' onClick={onCloseModal}>
-                                            Finish
-                                        </button>
-                                    )}
-
+                                    </div>
                                </div>
-
+                               )}
+                            </div>
+                               
                                {/* <div className='w-1/2'>
                                 
                                </div> */}
+                               {activeStep === 2 && (
+                                    <div className='mx-4'>
+                                        <button className='text-white w-full bg-first-color rounded-lg py-4 text-lg active:bg-bg-toggle'>Place Order</button>
+                                        <p className='text-sm text-gray-400 mt-2 mx-2'>By placing your order, you agree to our company</p>
+                                        <p className='text-sm mx-2 mt-1'>Privacy policy and Conditions of use.</p>
+
+                                        <hr className='text-geay-400 my-4'/>
+
+                                        <p className='font-semibold text-lg'>Order Summary</p>
+
+                                        <div className='text-sm text-gray-400'>
+                                            <div className='flex justify-between mt-3'>
+                                                <p>items (3)</p>
+                                                <p>56.73</p>
+                                            </div>
+
+                                            <div className='flex justify-between mt-3'>
+                                                <p>Shipping and handling</p>
+                                                <p>5.50</p>
+                                            </div>
+
+                                            <div className='flex justify-between mt-3'>
+                                                <p>Before tax</p>
+                                                <p>62.23</p>
+                                            </div>
+
+                                            <div className='flex justify-between mt-3'>
+                                                <p>Tax collected</p>
+                                                <p>8.21</p>
+                                            </div>
+                                        </div>
+
+                                        <hr className='text-geay-400 my-4' />
+
+                                        <div className='flex justify-between my-5'>
+                                            <p className='font-semibold text-lg'>Order Summary</p>
+                                            <p>70.44</p>
+                                        </div>
+                                    </div> 
+                                )}
+
+
+                                    <div className='mx-4'>
+                                        {activeStep > 1 && (
+                                            <button onClick={handleBack} className='text-black border py-3 border-gray-400 bg-white rounded-[6px] w-[32%]'>
+                                                Back
+                                            </button>
+                                            )}
+                                            {activeStep < steps.length ? (
+                                            <button onClick={handleNext} className='text-white bg-first-color py-3 mt-4 rounded-[6px] w-[50%]'>
+                                                Next
+                                            </button>
+                                            ) : (
+                                            <button className='text-white bg-first-color py-3 mt-4 ml-[1%] rounded-[6px] w-[67%]' onClick={onCloseModal}>
+                                                Finish
+                                            </button>
+                                        )}
+                                    </div>
                             </div>
                             </Modal.Body>
                         </Modal>
