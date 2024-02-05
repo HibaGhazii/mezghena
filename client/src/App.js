@@ -8,6 +8,7 @@ import Contact from './Components/ContactForm/Contact';
 import Courses from './Components/Pagecours/Courses';
 import CourseID from './Components/Pagecours/CourseID';
 import Service from './Components/PageService/Service';
+import AdminPanel from './Components/PageAdminPanel/AdminPanel';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path='/courses' component={Courses}/>
           <Route path='/CourseID' component={CourseID}/>
           <Route path='/service' component={Service}/> 
+          <Route path='/admin' component={AdminPanel}/>
         </Switch>
         
     </Router>
