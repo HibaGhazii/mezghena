@@ -8,7 +8,7 @@ const ColumnChart = ({ data, labels }) => {
     let chartInstance = null;
   
     if (chartContainer && chartContainer.current) {
-      const ctx = chartContainer.current.getContext('webgl');
+      const ctx = chartContainer.current.getContext('2d');
       
       if (chartInstance) {
         chartInstance.destroy();

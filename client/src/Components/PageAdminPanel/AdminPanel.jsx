@@ -18,7 +18,7 @@ const AdminPanel = () => {
           <Route path="/home" component={Home} /> 
           <Route path="/students" component={Students} />
           <Route path="/courseList" component={CourseList} />
-          <Route path="/settings" component={Settings} />
+          <Route path="/settings" component={Settings} /> 
            {/*<Route path="/signout" component={Signout} /> */}
         </Switch>
         

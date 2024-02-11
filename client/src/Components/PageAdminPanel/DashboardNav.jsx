@@ -10,8 +10,8 @@ const DashboardNav = () => {
 
         <div className="flex justify-between">
             <div className='flex items-center rounded-[5px]'>
-                <input type="text" className='border border-light-blue/50 h-[50px] outline-none pl-[13px] w-[350px] rounded-[5px] placeholder:text-[14px] placeholder:pl-8 leading-[20px] font-normal ' placeholder='Search Class, Documents, Activities... '/>
-                <CiSearch className='text-bg-toggle w-6 h-6 absolute translate-x-3'/>
+                <input type="text" className='border border-light-blue/50 h-[50px] outline-none pl-10 w-[350px] rounded-[5px] placeholder:text-[14px] leading-[20px] font-normal ' placeholder='Search Class, Documents, Activities... '/>
+                <CiSearch className='text-bg-toggle w-6 h-6 absolute translate-x-3 cursor-pointer'/>
             </div>
             
             <div className='flex items-center gap-4'>
