@@ -22,7 +22,7 @@ const AdminPanel = () => {
            {/*<Route path="/signout" component={Signout} /> */}
         </Switch>
         
-    </Router>
+      </Router>
     </div>
   )
 }
