@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CiSearch } from "react-icons/ci";
+
 import TurnOnOff from './TurnOnOff';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -150,23 +150,14 @@ const DashboardNav = () => {
   };
 
   return (
-    <div className="flex justify-between">
-      <div className='flex items-center rounded-[5px]'>
-        <input
-          type="text"
-          className='border border-light-blue/50 h-[50px] outline-none pl-10 w-[350px] rounded-[5px] placeholder:text-[14px] leading-[20px] font-normal '
-          placeholder='Search Class, Documents, Activities...'
-        />
-        <CiSearch className='text-bg-toggle w-6 h-6 absolute translate-x-3 cursor-pointer'/>
-      </div>
 
-      <div className='flex items-center gap-4'>
+      <div className='flex justify-end items-center gap-4'>
         <TurnOnOff/>
         <NotificationDropdown isOpen={notificationOpen} toggleDropdown={toggleNotification} />
         <SettingsDropdown isOpen={settingsOpen} toggleDropdown={toggleSettings} />
         <ProfileDropdown isOpen={profileOpen} toggleDropdown={toggleProfile} />
       </div>
-    </div>
+
   );
 };
 

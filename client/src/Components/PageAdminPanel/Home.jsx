@@ -4,13 +4,24 @@ import DashboardNav from './DashboardNav';
 import AreaChart from './AreaChart';
 import CircleProgress from './CircleProgress';
 import { IoDocumentTextOutline } from "react-icons/io5";
+import { CiSearch } from "react-icons/ci";
 
 const Home = () => {
 
   return (
 
     <div className='pl-[340px] mr-[100px] mt-5'>
-        <DashboardNav/> 
+        <div className='flex justify-between'>
+            <div className='flex items-center rounded-[5px]'>
+                <input
+                type="text"
+                className='border border-light-blue/50 h-[50px] outline-none pl-10 w-[350px] rounded-[5px] placeholder:text-[14px] leading-[20px] font-normal '
+                placeholder='Search Class, Documents, Activities...'
+                />
+                <CiSearch className='text-bg-toggle w-6 h-6 absolute translate-x-3 cursor-pointer'/>
+        </div>
+            <DashboardNav/> 
+        </div>
 
         <div className='bg-bg-toggle p-8 mt-10 text-white rounded-2xl w-full'>
             <p className='text-4xl font-bold pb-2'>Welcome back, John Doe</p>
