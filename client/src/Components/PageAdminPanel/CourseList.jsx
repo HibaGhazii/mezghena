@@ -24,7 +24,7 @@ const CourseList = () => {
               <input type="text" placeholder='Search Course'
                 className='ml-4 border-none h-[50px] w-[1080px] outline-none rounded-[10px] placeholder:text-[14px] leading-[20px] font-normal '
               /> 
-              <p><CiSearch className='text-bg-toggle w-6 h-6 cursor-pointer absolute top-[230px] right-36'/></p>
+              <p><CiSearch className='text-bg-toggle w-6 h-6 cursor-pointer absolute top-[230px] right-36 z-0'/></p>
             </div>
             
           </div>

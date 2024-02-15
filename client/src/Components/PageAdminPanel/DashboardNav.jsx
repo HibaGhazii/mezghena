@@ -89,7 +89,7 @@ const ProfileDropdown = ({ isOpen, toggleDropdown }) => {
     <div className="relative">
       <img
         src={profile}
-        className='mt-1 rounded-lg w-12 h-12 cursor-pointer'
+        className='mt-1 rounded-lg w-12 h-12 cursor-pointer z-50'
         onClick={toggleDropdown}
       />
       {isOpen && (
