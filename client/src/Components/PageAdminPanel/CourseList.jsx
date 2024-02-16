@@ -6,8 +6,10 @@ import image from '../assets/img/howitwork.png';
 import Pagination from '../Pagecours/Pagination';
 import EditCourseModal from './EditCourseModal';
 import ReviewCourseModal from './ReviewCourseModal';
+import { Link } from 'react-router-dom';
 
 const CourseList = () => {
+
   const [courses, setCourses] = useState([
     {
       image: image,
@@ -92,6 +94,7 @@ const CourseList = () => {
     },
     
   ]);
+  
 
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState(null);
@@ -120,27 +123,7 @@ const CourseList = () => {
 
   const paginate = pageNumber => setCurrentPage(pageNumber);
 
-  const [editModalOpen, setEditModalOpen] = useState(false);
-  const [reviewModalOpen, setReviewModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState(null);
-
-  const openEditModal = (course) => {
-    setSelectedCourse(course);
-    setEditModalOpen(true);
-  };
-
-  const openReviewModal = (course) => {
-    setSelectedCourse(course);
-    setReviewModalOpen(true);
-  };
-
-  const closeEditModal = () => {
-    setEditModalOpen(false);
-  };
-
-  const closeReviewModal = () => {
-    setReviewModalOpen(false);
-  };
 
   return (
     <div className="pl-[340px] mr-[100px] mt-5">
@@ -201,8 +184,9 @@ const CourseList = () => {
                     <p>{course.level}</p>
                   </div>
                   <div className='flex gap-1'>
-                    <button className='bg-light-blue/50 text-bg-toggle rounded-xl py-1 px-3' onClick={() => openReviewModal(course)}>Reviews</button>
-                    <button className='bg-first-color text-white rounded-xl py-1 px-3' onClick={() => openEditModal(course)}>Edit</button>
+                    <button className='bg-light-blue/50 text-bg-toggle rounded-xl py-1 px-3'>Reviews</button>
+                    <Link to='/editcourse' className='bg-first-color text-white rounded-xl py-1 px-3'>Edit</Link>
+                    {/* <Link to={`/edit-course/${course.id}`} className='bg-first-color text-white rounded-xl py-1 px-3'>Edit</Link> */}
                   </div>
                 </div>
               </div>
@@ -211,8 +195,8 @@ const CourseList = () => {
         </div>
         <Pagination postsPerPage={postsPerPage} totalPosts={sortedCourses.length} paginate={paginate} />
       </div>
-      <EditCourseModal isOpen={editModalOpen} onClose={closeEditModal} course={selectedCourse} />
-      <ReviewCourseModal isOpen={reviewModalOpen} onClose={closeReviewModal} />
+       
+     {/* <ReviewCourseModal isOpen={reviewModalOpen} onClose={closeReviewModal} /> */}
     </div>
   )
 }
