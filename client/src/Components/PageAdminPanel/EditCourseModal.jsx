@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import DashboardNav from './DashboardNav';
 import image from '../assets/img/howitwork.png';
 import { FaArrowRotateLeft } from "react-icons/fa6";
+import { Link } from 'react-router-dom';
 
 function EditCourseModal() {
     const [videoUrl, setVideoUrl] = useState(''); 
@@ -76,7 +77,7 @@ function EditCourseModal() {
                             <hr className='border-gray-400'/>
 
                             <div className='p-6'>
-                                <button className='bg-first-color text-white rounded-3xl px-6 py-1'>Add lesson + </button>
+                                <Link to='/addlesson' className='bg-first-color text-white rounded-3xl px-6 py-1'>Add lesson + </Link>
                                 <div className='mt-4'> 
                                     {lessons.map((lesson, index) => (
                                         <div key={index} className='px-5 flex justify-between items-center shadow-lg rounded-xl p-4'>
