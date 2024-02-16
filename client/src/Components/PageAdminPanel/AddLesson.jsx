@@ -2,19 +2,21 @@ import React , { useState } from 'react'
 import DashboardNav from './DashboardNav'
 import { FaFolder } from "react-icons/fa";
 import { FaFile } from "react-icons/fa";
+import DropZone from './DropZone';
+import image from '../assets/img/howitwork.png';
 
 const AddLesson = () => {
     const [files, setFiles] = useState([]);
 
-  const handleDrop = (e) => {
-    e.preventDefault();
-    const newFiles = [...e.dataTransfer.files];
-    setFiles((prevFiles) => [...prevFiles, ...newFiles]);
-  };
+    const handleDrop = (e) => {
+        e.preventDefault();
+        const newFiles = [...e.dataTransfer.files];
+        setFiles((prevFiles) => [...prevFiles, ...newFiles]);
+    };
 
-  const handleDragOver = (e) => {
-    e.preventDefault();
-  };
+    const handleDragOver = (e) => {
+        e.preventDefault();
+    };
 
   return (
     <div className='pl-[340px] mr-[100px] mt-5'>
@@ -29,11 +31,13 @@ const AddLesson = () => {
                 <hr className='border-gray-400'/>
 
                 <div className='p-6'>
-                    <p>Title</p>
-                    <input type="text" placeholder='Basics of React...' className='w-full rounded-xl border border-gray-300 mb-2 my-1'/>
-                    
-                    <p className='mt-2'>Description</p>
-                    <textarea name="description" placeholder='Basics of React...' cols="30" rows="10"  className=' w-full rounded-xl border border-gray-300 my-1'></textarea>
+                    <div className='flex items-center gap-3'>
+                        <label htmlFor="image">Image</label>
+                        <img src={image} className='w-14 h-14 rounded-full'/>
+                        <DropZone/>
+                    </div>
+
+
                 </div>
             </div>
 

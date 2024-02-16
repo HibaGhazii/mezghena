@@ -54,9 +54,7 @@ function EditCourseModal() {
                 <p className='text-bg-toggle text-4xl font-semibold'>Edit Courses</p>
                 <button className='rounded-3xl bg-first-color text-white px-8 py-2'>Save</button>
             </div>
-
            
-
            <div className='flex gap-10'>
                 <div className=' w-[65%]'>
                         <div className='rounded-lg shadow-lg shadow-gray-400 mt-6'>
