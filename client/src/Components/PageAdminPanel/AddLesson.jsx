@@ -7,6 +7,7 @@ import image from '../assets/img/howitwork.png';
 
 const AddLesson = () => {
     const [files, setFiles] = useState([]);
+    const [videoUrl, setVideoUrl] = useState(''); 
 
     const handleDrop = (e) => {
         e.preventDefault();
@@ -30,14 +31,57 @@ const AddLesson = () => {
                 <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Lesson details</p>
                 <hr className='border-gray-400'/>
 
-                <div className='p-6'>
-                    <div className='flex items-center gap-3'>
-                        <label htmlFor="image">Image</label>
-                        <img src={image} className='w-14 h-14 rounded-full'/>
-                        <DropZone/>
+                <div className='flex items-center'>
+                    <div className='p-6 w-[60%]'>
+                        <div className='flex items-center gap-7'>
+                            <label htmlFor="image" className='text-lg'>Image</label>
+                            <img src={image} className='w-14 h-14 rounded-full'/>
+                            <DropZone/>
+                        </div>
+
+                        <div className='flex items-center gap-16'>
+                            <label htmlFor="image" className='text-lg'>Title</label>
+                            <input type="text" placeholder='Write a title..' className='w-full rounded-xl border border-gray-300 mb-2'/>
+                        </div>
+
+                        <div className='flex items-center gap-10'>
+                            <label htmlFor="image" className='text-lg'>Course</label>
+                            <input type="text" placeholder='React js' className='w-full rounded-xl border border-gray-300 mb-2'/>
+                        </div>
+
+                        <div className='flex items-center gap-12'>
+                            <label htmlFor="image" className='text-lg'>Video</label>
+                            
+                            {/* Video input */}
+                            <div className=''>
+                                <input
+                                    type='text'
+                                    id='videoUrl'
+                                    className='w-full rounded-xl border border-gray-300 mb-2'
+                                    placeholder='Enter video URL'
+                                    value={videoUrl}
+                                    onChange={(e) => setVideoUrl(e.target.value)}
+                                />
+                            </div>   
+                        </div>
+
                     </div>
-
-
+                    <div className='px-6 pb-6 w-[40%]'>
+                        {/* Video player */}
+                        {videoUrl && (
+                                <div className='px-6 pt-6'>
+                                    <iframe
+                                    width="100%"
+                                    height="250"
+                                    src={`https://www.youtube.com/embed/${videoUrl.split('v=')[1]}`}
+                                    title="YouTube video player"
+                                    frameBorder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                    ></iframe>
+                                </div>
+                        )}
+                    </div>
                 </div>
             </div>
 

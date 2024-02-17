@@ -21,15 +21,15 @@ const DropZone = () => {
 
   return (
     <div className="mb-2 flex items-center">
-      <div className="flex-1">
-        <div
-          className="border-2 border-gray-400 p-4 rounded-lg mt-2"
+      <div className="flex-1"> 
+        <div 
+          className="border-2 border-gray-400 p-[7px] rounded-l-lg" 
           onDrop={handleDrop}
-          onDragOver={handleDragOver}
+          onDragOver={handleDragOver} 
         >
           {images.length === 0 ? (
             <p className="text-gray-500">No images uploaded</p>
-          ) : (
+          ) : ( 
             <ul className="flex flex-wrap">
               {images.map((image, index) => (
                 <li key={index} className="mr-2 mb-2">
