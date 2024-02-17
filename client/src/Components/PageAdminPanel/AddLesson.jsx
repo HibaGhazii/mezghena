@@ -57,7 +57,7 @@ const AddLesson = () => {
                                 <input
                                     type='text'
                                     id='videoUrl'
-                                    className='w-full rounded-xl border border-gray-300 mb-2'
+                                    className='w-[605px] rounded-xl border border-gray-300 mb-2'
                                     placeholder='Enter video URL'
                                     value={videoUrl}
                                     onChange={(e) => setVideoUrl(e.target.value)}
