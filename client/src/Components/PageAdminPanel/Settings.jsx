@@ -2,7 +2,9 @@ import React from 'react';
 import DashboardNav from './DashboardNav';
 import DropZone from './DropZone';
 import image from '../assets/img/howitwork.png';
-import { FaGlobe } from 'react-icons/fa'; // Example using react-icons
+import { FaGlobe } from 'react-icons/fa'; 
+import { TiLockClosed } from "react-icons/ti";
+import { MdEmail } from "react-icons/md";
 
 const Settings = () => {
   return (
@@ -48,11 +50,12 @@ const Settings = () => {
               <label htmlFor='email' className='text-lg'>
                 Email
               </label>
-              <input
+              <input readOnly
                 type='text'
                 placeholder='Rcontact@johndoe.com'
-                className='w-[550px] rounded-xl border border-gray-300 mb-2'
+                className='w-[550px] rounded-xl bg-gray-200 border border-gray-300 mb-2 pl-10 active:border-none active:'
               />
+              <MdEmail className='absolute translate-x-40 -translate-y-[2px] w-5 h-5 text-gray-800' />
             </div>
 
             <div className='flex items-center gap-[83px] relative'>
@@ -64,7 +67,7 @@ const Settings = () => {
                 placeholder='https://youtube.com/54sdqsd45sd46qsd5sd46qsd5sd46qsd'
                 className='w-[550px] rounded-xl border border-gray-300 mb-2 pl-10'
               />
-              <FaGlobe className='absolute translate-x-40 -translate-y-[2px] text-gray-800' />
+              <FaGlobe className='absolute translate-x-40 -translate-y-[2px] w-4 h-4 text-gray-800' />
             </div>
 
             <div className='flex items-center gap-2'>
@@ -74,8 +77,10 @@ const Settings = () => {
               <input
                 type='text'
                 placeholder='Enter Password'
-                className=' w-[550px] rounded-xl border border-gray-300 mb-2'
+                className=' w-[550px] rounded-xl border border-gray-300 mb-2 pl-10'
+                
               />
+              <TiLockClosed className='absolute translate-x-40 -translate-y-[2px] w-5 h-5 text-gray-800' />
             </div>
 
             <div className='flex items-center gap-2 mt-5 ml-36'>
