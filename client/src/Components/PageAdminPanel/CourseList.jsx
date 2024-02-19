@@ -194,8 +194,7 @@ const CourseList = () => {
           ))}
         </div>
         <Pagination postsPerPage={postsPerPage} totalPosts={sortedCourses.length} paginate={paginate} />
-      </div>
-       
+      </div> 
      {/* <ReviewCourseModal isOpen={reviewModalOpen} onClose={closeReviewModal} /> */}
     </div>
   )
