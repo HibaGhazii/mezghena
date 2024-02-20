@@ -110,6 +110,86 @@ const Profile = () => {
 
     </div>
 
+    <div className='flex items-center gap-2 mb-8'>
+
+        <div className=' w-[70%] rounded-lg shadow-lg shadow-gray-400 mt-6'>
+            <div className='flex items-center justify-between mr-5'>
+                <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Account informations</p>
+                <button className='text-white bg-first-color rounded-full py-1 px-5'>Edit</button>
+            </div>
+            <hr className='border-2 border-blue-200'/>
+
+            <div>
+                <form action="" className='flex gap-3 mx-8 my-5'>
+                    <div className='w-1/2'>
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="userid" className='text-first-color'>UserID</label>
+                            <input type="text" placeholder='34567' readOnly className='border-none bg-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="email" className='text-first-color'>Email</label>
+                            <input type="text" placeholder='email@gmail.com' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="postcode" className='text-first-color'>Post Code</label>
+                            <input type="text" placeholder='34567' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="country" className='text-first-color'>Country</label>
+                            <input type="text" placeholder='USA' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="website" className='text-first-color'>Website</label>
+                            <input type="text" placeholder='http://johndoe.com' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                    </div>
+
+                    <div className='w-1/2'>
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="fullname" className='text-first-color'>FullName</label>
+                            <input type="text" placeholder='34567' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="address" className='text-first-color'>Home Address</label>
+                            <input type="text" placeholder='125 college street, new york' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="city" className='text-first-color'>City</label>
+                            <input type="text" placeholder='Manhattan' className='border-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="joined" className='text-first-color'>Joined since</label>
+                            <input type="text" placeholder='03/12/2023' readOnly className='border-none bg-gray-300 rounded-xl' />
+                        </div>
+
+                        <div className='flex flex-col my-4'>
+                            <label htmlFor="category" className='text-first-color'>Category</label>
+                            <input type="text" placeholder='web development' className='border-gray-300 rounded-xl' />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div className=' w-[70%] rounded-lg shadow-lg shadow-gray-400 mt-6'>
+            <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Top Performance Courses</p>
+            <hr className='border-2 border-blue-200'/>
+
+            <div>
+                
+            </div>
+
+        </div>
+    </div>
+
     </div>
   )
 }
