@@ -179,12 +179,12 @@ const Profile = () => {
             </div>
         </div>
 
-        <div className=' w-[70%] rounded-lg shadow-lg shadow-gray-400 mt-6'>
+        <div className=' w-[30%] rounded-lg shadow-lg shadow-gray-400 mt-6'>
             <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Top Performance Courses</p>
             <hr className='border-2 border-blue-200'/>
 
             <div>
-                
+
             </div>
 
         </div>
