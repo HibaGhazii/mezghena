@@ -7,6 +7,7 @@ import CourseList from './CourseList';
 import Settings from './Settings';
 import EditCourseModal from './EditCourseModal';
 import AddLesson from './AddLesson';
+import Profile from './Profile';
 
 const AdminPanel = () => {
   return (
@@ -23,6 +24,7 @@ const AdminPanel = () => {
           <Route path="/editcourse" component={EditCourseModal} />
           <Route path="/settings" component={Settings} /> 
           <Route path="/addlesson" component={AddLesson} /> 
+          <Route path="/profile" component={Profile} /> 
           
            {/*<Route path="/signout" component={Signout} /> */}
         </Switch>

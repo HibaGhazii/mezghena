@@ -103,10 +103,10 @@ const ProfileDropdown = ({ isOpen, toggleDropdown }) => {
             </div>
                 <hr  className='border-2 border-light-blue'/>
 
-            <div className='flex items-center gap-2 py-2' >
+            <Link to='/profile' className='flex items-center gap-2 py-2' >
                 <CgProfile className='w-6 h-6 text-bg-toggle'/> 
                 <button className='font-semibold text-gray-600'>Profile</button>
-            </div>
+            </Link>
                 <hr  className='border-2 border-light-blue'/>
 
                 <Link to='/settings' className='flex items-center gap-2 py-2'>

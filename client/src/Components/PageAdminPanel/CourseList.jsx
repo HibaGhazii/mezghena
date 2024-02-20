@@ -190,7 +190,7 @@ const CourseList = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> 
           ))}
         </div>
         <Pagination postsPerPage={postsPerPage} totalPosts={sortedCourses.length} paginate={paginate} />

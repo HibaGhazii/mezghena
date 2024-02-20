@@ -29,7 +29,7 @@ const AddLesson = () => {
 
             <div className='rounded-lg shadow-lg shadow-gray-400 mt-6'>
                 <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Lesson details</p>
-                <hr className='border-gray-400'/>
+                <hr className='border-gray-400'/> 
 
                 <div className='flex items-center'>
                     <div className='p-6 w-[60%]'>
