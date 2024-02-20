@@ -5,6 +5,24 @@ import { TiLocation } from "react-icons/ti";
 import { TbWorld } from "react-icons/tb";
 
 const Profile = () => {
+    const studentQueries = [
+        {
+            image:image,
+            title:'Machine learning Bootcamp',
+            teacher:'Brandon Taylor'
+        },
+        {
+            image:image,
+            title:'Machine learning Bootcamp',
+            teacher:'Brandon Taylor'
+        },
+        {
+            image:image,
+            title:'Machine learning Bootcamp',
+            teacher:'Brandon Taylor'
+        },
+
+    ]
   return (
     <div className='pl-[340px] mr-[100px] mt-5'>
     <DashboardNav/>
@@ -49,33 +67,19 @@ const Profile = () => {
             <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Student Queries</p>
             <hr className='border-2 border-blue-200'/>
 
-            <div className='flex gap-2 items-center my-2'>
-                <img src={image} className='w-14 h-14 rounded-full mx-4'/>
-                <div className='flex flex-col text-left'>
-                    <p className='text-bg-toggle font-bold text-lg'>Machine learning Bootcamp</p>
-                    <p className='text-gray-600 text-sm'>By Brandon Taylor</p>
-                </div>
-            </div>
-
-            <hr className='border-2 border-blue-200'/>
+            {studentQueries.map((query, index) => (
+                <React.Fragment key={index}>
+                    <div className='flex gap-2 items-center my-2'>
+                        <img src={query.image} className='w-14 h-14 rounded-full mx-4'/>
+                        <div className='flex flex-col text-left'>
+                            <p className='text-bg-toggle font-bold text-lg'>{query.title}</p>
+                            <p className='text-gray-600 text-sm'>{query.teacher}</p>
+                        </div>
+                    </div>
+                    {index !== studentQueries.length - 1 && <hr className='border-2 border-blue-200'/>}
+                </React.Fragment>
+            ))}
             
-            <div className='flex gap-2 items-center my-2'>
-                <img src={image} className='w-14 h-14 rounded-full mx-4'/>
-                <div className='flex flex-col text-left'>
-                    <p className='text-bg-toggle font-bold text-lg'>Machine learning Bootcamp</p>
-                    <p className='text-gray-600 text-sm'>By Brandon Taylor</p>
-                </div>
-            </div>
-
-            <hr className='border-2 border-blue-200'/>
-            
-            <div className='flex gap-2 items-center my-2'>
-                <img src={image} className='w-14 h-14 rounded-full mx-4'/>
-                <div className='flex flex-col text-left'>
-                    <p className='text-bg-toggle font-bold text-lg'>Machine learning Bootcamp</p>
-                    <p className='text-gray-600 text-sm'>By Brandon Taylor</p>
-                </div>
-            </div>
         </div>
     </div>
 
