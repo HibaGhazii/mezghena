@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState, useRef } from 'react';
 import DashboardNav from './DashboardNav'
 import image from "../assets/img/howitwork.png";
 import { TiLocation } from "react-icons/ti";
@@ -8,65 +8,81 @@ import { BsX } from "react-icons/bs";
 import { useCountUp } from 'use-count-up';
 import Typography from '@mui/joy/Typography';
 import CircularProgress from '@mui/joy/CircularProgress';
-import { useState } from 'react';
 
 const Profile = () => {
-    const [showAllCourses, setShowAllCourses] = useState(false);
-    const [studentQueries, setStudentQueries] = useState([
-        {
-            image: image,
-            title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
-        },
-        {
-            image: image,
-            title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
-        },
-        {
-            image: image,
-            title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
-        },
-        {
-            image: image,
-            title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
-        },
-        {
-            image: image,
-            title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
-        },
-        {
-            image: image,
-            title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
-        },
-    ]);
-
-    const handleViewMore = () => {
-        setShowAllCourses(true);
+    const [isOpen, setIsOpen] = useState(false);
+    const [accordionOpenPanels, setAccordionOpenPanels] = useState([]);
+    const [showReadMore, setShowReadMore] = useState(false);
+    const ref = useRef(null);
+  
+    useEffect(() => {
+        if (ref.current) {
+          setShowReadMore(ref.current.scrollHeight !== ref.current.clientHeight);
+        }
+      }, []);
+  
+    const section = {
+      WebkitLineClamp: 3,
+      WebkitBoxOrient: 'vertical',
+      overflow: 'hidden',
+      display: '-webkit-box',
     };
 
-    const coursesToShow = showAllCourses ? studentQueries : studentQueries.slice(0, 5);
-
+    const studentQueries = [
+        {
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
+        },
+        {
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
+        },
+        {
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
+        },
+        {
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
+        },
+        {
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
+        },
+        {
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
+        },
+    ];
 
     const { value: value2, reset } = useCountUp({
         isCounting: true,
         duration: 1,
         start: 0,
         end: 65,
-        
     });
 
-    React.useEffect(() => {
+    useEffect(() => {
         const timer = setTimeout(() => {
             reset(); 
         }, 5000);
 
         return () => clearTimeout(timer);
     }, [reset]);
+
+    const toggleAccordionPanel = (panelIndex) => {
+        if (accordionOpenPanels.includes(panelIndex)) {
+            setAccordionOpenPanels(accordionOpenPanels.filter(index => index !== panelIndex));
+        } else {
+            setAccordionOpenPanels([...accordionOpenPanels, panelIndex]);
+        }
+    };
 
     
   return (
@@ -212,32 +228,61 @@ const Profile = () => {
             <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Top Performance Courses</p>
             <hr className='border-2 border-blue-200'/>
 
-            <div className=''>
-                {studentQueries.map((query, index) => ( 
-                    <div key={index} className='flex items-center mx-3'> 
-                        <div className='flex gap-3 items-center my-2'>
-                            <div>
-                                <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
-                            </div>
-                            <div>
-                                <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
-                                <p className='text-gray-500 text-sm'>78 Registered</p>
-                            </div>
-                        </div>
-                        <div>
-                        
-                            <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
-                                <Typography>{value2}%</Typography>
-                            </CircularProgress>
-            
-                        </div>
+            <div style={isOpen ? null : section} ref={ref}>
+    {isOpen ? (
+        studentQueries.map((query, index) => ( 
+            <div key={index} className='flex items-center mx-3'> 
+                <div className='flex gap-3 items-center my-2'>
+                    <div>
+                        <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
                     </div>
-                ))}
-                {!showAllCourses && <button onClick={handleViewMore} className='bg-first-color text-center text-white px-12 py-2 rounded-full translate-x-[60%] my-3'>View more</button>}
+                    <div>
+                        <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
+                        <p className='text-gray-500 text-sm'>78 Registered</p>
                     </div>
                 </div>
+                <div>
+                    <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
+                        <Typography>{value2}%</Typography>
+                    </CircularProgress>
+                </div>
+            </div>
+        ))
+    ) : (
+        studentQueries.slice(0, 5).map((query, index) => ( 
+            <div key={index} className='flex items-center mx-3'> 
+                <div className='flex gap-3 items-center my-2'>
+                    <div>
+                        <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
+                    </div>
+                    <div>
+                        <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
+                        <p className='text-gray-500 text-sm'>78 Registered</p>
+                    </div>
+                </div>
+                <div>
+                    <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
+                        <Typography>{value2}%</Typography>
+                    </CircularProgress>
+                </div>
+            </div>
+        ))
+    )}
+</div>
+
+            <button 
+                        onClick={() => {
+                            setIsOpen(!isOpen);
+                            setAccordionOpenPanels([]);
+                        }} 
+                        className='bg-first-color text-center text-white px-12 py-2 rounded-full ml-24 my-3'
+                    >
+                        {isOpen ? "View less..." : "View more..."}
+            </button>
             </div>
         </div>
+    </div>
+
     );
 };
 
