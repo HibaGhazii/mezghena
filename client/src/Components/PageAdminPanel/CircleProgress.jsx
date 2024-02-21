@@ -8,6 +8,33 @@ import { useCountUp } from 'use-count-up';
 
 const CircleProgress = () => {
 
+    const data = [
+        {
+            class: 'A',
+            registre:69
+        },
+        {
+            class: 'B',
+            registre:79
+        },
+        {
+            class: 'C',
+            registre:67
+        },
+        {
+            class: 'D',
+            registre:87
+        },
+        {
+            class: 'E',
+            registre:46
+        },
+        {
+            class: 'F',
+            registre:23
+        },
+    ]
+
     const { value: value2, reset } = useCountUp({
         isCounting: true,
         duration: 1,
@@ -24,62 +51,24 @@ const CircleProgress = () => {
         return () => clearTimeout(timer);
     }, [reset]);
 
-  return (
-    <div className="flex flex-col">
-        <div className='flex justify-between shadow-lg rounded-md p-2.5'>
-            <div>
-                <h3 className="text-lg font-semibold mb-2 text-bg-toggle">Class A</h3>
-                <p>78 Registered</p>
-            </div>
-            
-            <div>
-                <CircularProgress size="lg" determinate value={value2} style={{ color: '#F5F5DC' }} thickness={6}>
-                    <Typography>{value2}%</Typography>
-                </CircularProgress>
-            </div>
-        </div> 
-
-        <div className='flex justify-between shadow-lg rounded-md p-2.5'>
-            <div>
-                <h3 className="text-lg font-semibold mb-2 text-bg-toggle">Class B</h3>
-                <p>78 Registered</p>
-            </div>
-            
-            <div>
-                <CircularProgress size="lg" determinate value={value2} thickness={6}>
-                    <Typography>{value2}%</Typography> 
-                </CircularProgress> 
-            </div> 
+    return (
+        <div className="flex flex-col overflow-y-scroll max-h-[350px]">
+            {data.map((item, index) => (
+                <div key={index} className='flex justify-between shadow-lg rounded-md p-2.5 mb-4 '>
+                    <div>
+                        <h3 className="text-lg font-semibold mb-2 text-bg-toggle">Class {item.class}</h3>
+                        <p>{item.registre} Registered</p>
+                    </div>
+                    
+                    <div>
+                        <CircularProgress size="lg" determinate value={value2} style={{ color: '#F5F5DC' }} thickness={6}>
+                            <Typography>{value2}%</Typography>
+                        </CircularProgress>
+                    </div>
+                </div> 
+            ))}
         </div>
-
-        <div className='flex justify-between shadow-lg rounded-md p-2.5'>
-            <div>
-                <h3 className="text-lg font-semibold mb-2 text-bg-toggle">Class C</h3>
-                <p>78 Registered</p>
-            </div>
-            
-            <div>
-                <CircularProgress size="lg" determinate value={value2} thickness={6}>
-                    <Typography>{value2}%</Typography>
-                </CircularProgress>
-            </div>
-        </div>
-
-        <div className='flex justify-between shadow-lg rounded-md p-2.5'>
-            <div>
-                <h3 className="text-lg font-semibold mb-2 text-bg-toggle">Class D</h3>
-                <p>78 Registered</p>
-            </div>
-            
-            <div>
-                <CircularProgress size="lg" determinate value={value2} thickness={6}>
-                    <Typography>{value2}%</Typography>
-                </CircularProgress>
-            </div>
-        </div>
-    </div>
-  );
+    );
 };
 
 export default CircleProgress;
-

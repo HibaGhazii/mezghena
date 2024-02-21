@@ -5,41 +5,70 @@ import { TiLocation } from "react-icons/ti";
 import { TbWorld } from "react-icons/tb";
 import { BsCheck2 } from "react-icons/bs";
 import { BsX } from "react-icons/bs";
+import { useCountUp } from 'use-count-up';
+import Typography from '@mui/joy/Typography';
+import CircularProgress from '@mui/joy/CircularProgress';
+import { useState } from 'react';
 
 const Profile = () => {
-    const studentQueries = [
+    const [showAllCourses, setShowAllCourses] = useState(false);
+    const [studentQueries, setStudentQueries] = useState([
         {
-            image:image,
-            title:'Machine learning Bootcamp',
-            teacher:'Brandon Taylor'
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
         },
         {
-            image:image,
-            title:'Machine learning Bootcamp',
-            teacher:'Brandon Taylor'
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
         },
         {
-            image:image,
-            title:'Machine learning Bootcamp',
-            teacher:'Brandon Taylor'
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
         },
         {
-            image:image,
-            title:'Machine learning Bootcamp',
-            teacher:'Brandon Taylor'
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
         },
         {
-            image:image,
-            title:'Machine learning Bootcamp',
-            teacher:'Brandon Taylor'
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
         },
         {
-            image:image,
-            title:'Machine learning Bootcamp',
-            teacher:'Brandon Taylor'
+            image: image,
+            title: 'Machine learning Bootcamp',
+            teacher: 'Brandon Taylor'
         },
+    ]);
 
-    ]
+    const handleViewMore = () => {
+        setShowAllCourses(true);
+    };
+
+    const coursesToShow = showAllCourses ? studentQueries : studentQueries.slice(0, 5);
+
+
+    const { value: value2, reset } = useCountUp({
+        isCounting: true,
+        duration: 1,
+        start: 0,
+        end: 65,
+        
+    });
+
+    React.useEffect(() => {
+        const timer = setTimeout(() => {
+            reset(); 
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, [reset]);
+
+    
   return (
     <div className='pl-[340px] mr-[100px] mt-5'>
     <DashboardNav/>
@@ -183,15 +212,33 @@ const Profile = () => {
             <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Top Performance Courses</p>
             <hr className='border-2 border-blue-200'/>
 
-            <div>
-
+            <div className=''>
+                {studentQueries.map((query, index) => ( 
+                    <div key={index} className='flex items-center mx-3'> 
+                        <div className='flex gap-3 items-center my-2'>
+                            <div>
+                                <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
+                            </div>
+                            <div>
+                                <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
+                                <p className='text-gray-500 text-sm'>78 Registered</p>
+                            </div>
+                        </div>
+                        <div>
+                        
+                            <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
+                                <Typography>{value2}%</Typography>
+                            </CircularProgress>
+            
+                        </div>
+                    </div>
+                ))}
+                {!showAllCourses && <button onClick={handleViewMore} className='bg-first-color text-center text-white px-12 py-2 rounded-full translate-x-[60%] my-3'>View more</button>}
+                    </div>
+                </div>
             </div>
-
         </div>
-    </div>
+    );
+};
 
-    </div>
-  )
-}
-
-export default Profile
+export default Profile;
