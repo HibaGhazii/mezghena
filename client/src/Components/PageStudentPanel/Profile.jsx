@@ -3,8 +3,6 @@ import DashboardNav from './DashboardNav'
 import image from "../assets/img/howitwork.png";
 import { TiLocation } from "react-icons/ti";
 import { TbWorld } from "react-icons/tb";
-import { BsCheck2 } from "react-icons/bs";
-import { BsX } from "react-icons/bs";
 import { useCountUp } from 'use-count-up';
 import Typography from '@mui/joy/Typography';
 import CircularProgress from '@mui/joy/CircularProgress';
@@ -28,7 +26,7 @@ const Profile = () => {
       display: '-webkit-box',
     };
 
-    const studentQueries = [
+    const mycourse = [
         {
             image: image,
             title: 'Machine learning Bootcamp',
@@ -75,15 +73,6 @@ const Profile = () => {
 
         return () => clearTimeout(timer);
     }, [reset]);
-
-    const toggleAccordionPanel = (panelIndex) => {
-        if (accordionOpenPanels.includes(panelIndex)) {
-            setAccordionOpenPanels(accordionOpenPanels.filter(index => index !== panelIndex));
-        } else {
-            setAccordionOpenPanels([...accordionOpenPanels, panelIndex]);
-        }
-    };
-
     
   return (
     <div className='pl-[340px] mr-[100px] mt-5'>
@@ -126,29 +115,14 @@ const Profile = () => {
         </div>
 
         <div className=' w-[70%] rounded-lg shadow-lg shadow-gray-400 mt-6'>
-            <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Student Queries</p>
+            <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Bio</p>
             <hr className='border-2 border-blue-200'/>
 
-            <div className='overflow-y-scroll max-h-[210px]'>
-                {studentQueries.map((query, index) => (
-                    <React.Fragment key={index}>
-                        <div className='flex items-center justify-between'>
-                            <div className='flex gap-2 items-center my-2'>
-                                <img src={query.image} className='w-10 h-10 rounded-full mx-4'/>
-                                <div className='flex flex-col text-left'>
-                                    <p className='text-bg-toggle font-bold text-lg'>{query.title}</p>
-                                    <p className='text-gray-600 text-sm'>{query.teacher}</p>
-                                </div>
-                            </div>
-                            <div className='flex items-center gap-3'>
-                                <button className='bg-green-300 rounded-full p-2'><BsCheck2 className='w-4 h-4'/></button> 
-                                <button className='bg-red-300 rounded-full p-2'><BsX className='w-4 h-4'/></button>
-                            </div>
-                        </div>
-                        {index !== studentQueries.length - 1 && <hr className='border-2 border-blue-200'/>}
-                        
-                    </React.Fragment> 
-                ))}
+            <div className='p-5 text-lg overflow-y-scroll max-h-[210px]'>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt
+                </p>
             </div>
             
         </div>
@@ -225,65 +199,65 @@ const Profile = () => {
         </div>
 
         <div className=' w-[30%] rounded-lg shadow-lg shadow-gray-400 mt-6'>
-            <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>Top Performance Courses</p>
+            <p className='text-bg-toggle text-xl font-semibold py-4 px-6'>My Courses</p>
             <hr className='border-2 border-blue-200'/>
 
             <div style={isOpen ? null : section} ref={ref}>
-    {isOpen ? (
-        studentQueries.map((query, index) => ( 
-            <div key={index} className='flex items-center mx-3'> 
-                <div className='flex gap-3 items-center my-2'>
-                    <div>
-                        <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
-                        <p className='text-gray-500 text-sm'>78 Registered</p>
-                    </div>
-                </div>
-                <div>
-                    <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
-                        <Typography>{value2}%</Typography>
-                    </CircularProgress>
-                </div>
+                {isOpen ? (
+                    mycourse.map((query, index) => ( 
+                        <div key={index} className='flex items-center mx-3'> 
+                            <div className='flex gap-3 items-center my-2'>
+                                <div>
+                                    <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
+                                    <p className='text-gray-500 text-sm'>Development</p>
+                                </div>
+                            </div>
+                            <div>
+                                <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
+                                    <Typography>{value2}%</Typography>
+                                </CircularProgress>
+                            </div>
+                        </div>
+                    ))
+                ) : (
+                    mycourse.slice(0, 5).map((query, index) => ( 
+                        <div key={index} className='flex items-center mx-3'> 
+                            <div className='flex gap-3 items-center my-2'>
+                                <div>
+                                    <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
+                                </div>
+                                <div>
+                                    <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
+                                    <p className='text-gray-500 text-sm'>Development</p>
+                                </div>
+                            </div>
+                            <div>
+                                <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
+                                    <Typography>{value2}%</Typography>
+                                </CircularProgress>
+                            </div>
+                        </div>
+                    ))
+                )}
             </div>
-        ))
-    ) : (
-        studentQueries.slice(0, 5).map((query, index) => ( 
-            <div key={index} className='flex items-center mx-3'> 
-                <div className='flex gap-3 items-center my-2'>
-                    <div>
-                        <img src={query.image} className='w-20 h-16 rounded-3xl object-cover'/>
-                    </div>
-                    <div>
-                        <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
-                        <p className='text-gray-500 text-sm'>78 Registered</p>
-                    </div>
-                </div>
-                <div>
-                    <CircularProgress size="lg" determinate value={value2} style={{ color: '#FFA135' }} thickness={6}>
-                        <Typography>{value2}%</Typography>
-                    </CircularProgress>
-                </div>
-            </div>
-        ))
-    )}
-</div>
 
-            <button  
-                onClick={() => {
-                    setIsOpen(!isOpen);
-                    setAccordionOpenPanels([]);
-                }} 
-                className='bg-first-color text-center text-white px-12 py-2 rounded-full ml-24 my-3'
-            >
-                {isOpen ? "View less..." : "View more..."}
-            </button>
+                <button  
+                    onClick={() => {
+                        setIsOpen(!isOpen);
+                        setAccordionOpenPanels([]);
+                    }} 
+                    className='bg-first-color text-center text-white px-12 py-2 rounded-full ml-24 my-3'
+                >
+                    {isOpen ? "View less..." : "View more..."}
+                </button>
+                </div>
             </div>
         </div>
-    </div>
 
-    );
-};
+        );
+    };
 
 export default Profile;
