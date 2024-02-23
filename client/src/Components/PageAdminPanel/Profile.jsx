@@ -270,7 +270,7 @@ const Profile = () => {
     )}
 </div>
 
-            <button 
+            <button  
                         onClick={() => {
                             setIsOpen(!isOpen);
                             setAccordionOpenPanels([]);
