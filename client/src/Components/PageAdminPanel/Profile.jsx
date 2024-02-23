@@ -271,13 +271,13 @@ const Profile = () => {
 </div>
 
             <button  
-                        onClick={() => {
-                            setIsOpen(!isOpen);
-                            setAccordionOpenPanels([]);
-                        }} 
-                        className='bg-first-color text-center text-white px-12 py-2 rounded-full ml-24 my-3'
-                    >
-                        {isOpen ? "View less..." : "View more..."}
+                onClick={() => {
+                    setIsOpen(!isOpen);
+                    setAccordionOpenPanels([]);
+                }} 
+                className='bg-first-color text-center text-white px-12 py-2 rounded-full ml-24 my-3'
+            >
+                {isOpen ? "View less..." : "View more..."}
             </button>
             </div>
         </div>
