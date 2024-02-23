@@ -30,32 +30,32 @@ const Profile = () => {
         {
             image: image,
             title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
+            theme: 'Development'
         },
         {
             image: image,
             title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
+            theme: 'Development'
         },
         {
             image: image,
             title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
+            theme: 'Development'
         },
         {
             image: image,
             title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
+            theme: 'Development'
         },
         {
             image: image,
             title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
+            theme: 'Development'
         },
         {
             image: image,
             title: 'Machine learning Bootcamp',
-            teacher: 'Brandon Taylor'
+            theme: 'Development'
         },
     ];
 
@@ -212,7 +212,7 @@ const Profile = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
-                                    <p className='text-gray-500 text-sm'>Development</p>
+                                    <p className='text-gray-500 text-sm'>{query.theme}</p>
                                 </div>
                             </div>
                             <div>
@@ -231,7 +231,7 @@ const Profile = () => {
                                 </div>
                                 <div>
                                     <h3 className="text-lg font-bold mb-1 text-bg-toggle">{query.title}</h3>
-                                    <p className='text-gray-500 text-sm'>Development</p>
+                                    <p className='text-gray-500 text-sm'>{query.theme}</p> 
                                 </div>
                             </div>
                             <div>
