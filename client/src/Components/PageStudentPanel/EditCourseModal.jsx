@@ -133,6 +133,25 @@ function EditCourseModal() {
                             <button className=' bg-first-color text-white py-1 px-8 rounded-xl'>Send</button>
                         </div>
                     </div>
+
+                    <div className=' rounded-lg shadow-lg shadow-gray-400 mt-6'>
+                        
+                        <div className='px-5 flex flex-col gap-4 items-center shadow-lg rounded-xl p-4'>
+                            <div className='flex items-center gap-2'> 
+                                <img src={image} className='w-16 h-16 object-cover rounded-full'/>
+                                <div>
+                                    <h2 className='text-lg my-1 font-bold text-bg-toggle'>Micheal John</h2>
+                                    <p className='text-gray-600 mb-5'>Instructor</p>  
+                                </div> 
+                            </div>
+
+                            <div className=''>
+                                <p>Having over 12 years exp. Adrian is one of the lead UI designers in the industry Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, aut.</p>
+                            </div>
+                            
+                        </div>
+                       
+                    </div>
                 </div>
 
 
