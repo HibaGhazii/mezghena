@@ -136,12 +136,12 @@ function EditCourseModal() {
 
                     <div className=' rounded-lg shadow-lg shadow-gray-400 mt-6'>
                         
-                        <div className='px-5 flex flex-col gap-4 items-center shadow-lg rounded-xl p-4'>
-                            <div className='flex items-center gap-2'> 
+                        <div className='px-5 shadow-lg rounded-xl p-4'>
+                            <div className='flex items-center gap-4 mb-5'> 
                                 <img src={image} className='w-16 h-16 object-cover rounded-full'/>
                                 <div>
-                                    <h2 className='text-lg my-1 font-bold text-bg-toggle'>Micheal John</h2>
-                                    <p className='text-gray-600 mb-5'>Instructor</p>  
+                                    <h2 className='text-lg font-bold text-bg-toggle'>Micheal John</h2>
+                                    <p className='text-gray-600 mb-2'>Instructor</p>  
                                 </div> 
                             </div>
 
