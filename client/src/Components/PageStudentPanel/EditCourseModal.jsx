@@ -141,11 +141,11 @@ function EditCourseModal() {
                                 <img src={image} className='w-16 h-16 object-cover rounded-full'/>
                                 <div>
                                     <h2 className='text-lg font-bold text-bg-toggle'>Micheal John</h2>
-                                    <p className='text-gray-600 mb-2'>Instructor</p>  
+                                    <p className='text-gray-600 mb-2 text-sm'>Instructor</p>  
                                 </div> 
                             </div>
 
-                            <div className=''>
+                            <div className='my-2'>
                                 <p>Having over 12 years exp. Adrian is one of the lead UI designers in the industry Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere, aut.</p>
                             </div>
                             
