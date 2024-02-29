@@ -4,8 +4,7 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { CiSearch } from "react-icons/ci";
 import image from '../assets/img/howitwork.png';
 import Pagination from '../Pagecours/Pagination';
-import EditCourseModal from './EditCourseModal';
-import ReviewCourseModal from './ReviewCourseModal';
+
 import { Link } from 'react-router-dom';
 
 const CourseList = () => {

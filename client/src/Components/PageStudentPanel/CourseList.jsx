@@ -186,7 +186,7 @@ const CourseList = () => {
                   <div className='flex gap-1'>
 
                     <button className='bg-second-color text-black rounded-xl py-1 px-5 flex items-center gap-1'>Add to favorite <CiHeart className='w-4 h-4'/></button>
-                    <Link to='/editcourse' className='bg-first-color text-white rounded-xl py-1 px-3'>Resume</Link>
+                    <Link to='/resumecourse' className='bg-first-color text-white rounded-xl py-1 px-3'>Resume</Link>
                     {/* <Link to='/editcourse' className='bg-light-blue/60 text-bg-toggle rounded-xl py-1 px-3'>Review course</Link> */}
 
                   </div>

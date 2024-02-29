@@ -1,10 +1,12 @@
 import React, { useState } from 'react'; 
 import DashboardNav from './DashboardNav';
 import image from '../assets/img/howitwork.png';
-import { FaArrowRotateLeft } from "react-icons/fa6";
+import { FaArrowRotateLeft,FaClock } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
+import { MdInsertChart } from "react-icons/md";
+import { FaFileAlt,FaFolder  } from "react-icons/fa";
 
-function EditCourseModal() {
+function ResumeCourse() {
     const [videoUrl, setVideoUrl] = useState(''); 
     const [rating, setRating] = useState(0);
 
@@ -152,6 +154,34 @@ function EditCourseModal() {
                         </div>
                        
                     </div>
+
+                    <div className=' rounded-lg shadow-lg shadow-gray-400 mt-6 px-4'>
+                        
+                        <div className='flex items-center px-4'>
+                            <MdInsertChart className='text-first-color w-8 h-8'/>
+                            <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Beginner</p>
+                        </div>
+                        <hr className='border-gray-400'/>
+                        
+                        <div className='flex items-center px-4'>
+                            <FaClock className='text-first-color w-7 h-7'/>
+                            <p className='text-bg-toggle text-lg font-semibold py-4 px-6'>2 <span className='font-normal'>hrs</span> 26 <span className='font-normal'>min</span></p>
+                        </div>
+                    </div>
+
+                    <div className=' rounded-lg shadow-lg shadow-gray-400 mt-6 px-4'>
+                        
+                        <div className='flex items-center px-4'>
+                            <FaFolder  className='text-first-color w-7 h-7'/>
+                            <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Latest chapter</p>
+                        </div>
+                        <hr className='border-gray-400'/>
+                        
+                        <div className='flex items-center px-4'>
+                            <FaFileAlt className='text-first-color w-7 h-7'/>
+                            <p className='text-bg-toggle text-lg font-semibold py-4 px-6'>Database Models</p>
+                        </div>
+                    </div>
                 </div>
 
 
@@ -160,4 +190,4 @@ function EditCourseModal() {
   );
 }
 
-export default EditCourseModal;
+export default ResumeCourse;

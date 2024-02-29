@@ -4,9 +4,9 @@ import SidebarComponent from './Sidebar';
 import Home from './Home'
 import CourseList from './CourseList';
 import Settings from './Settings';
-import EditCourseModal from './EditCourseModal';
 import AddLesson from './AddLesson';
 import Profile from './Profile';
+import ResumeCourse from './EditCourseModal';
 
 function StudentPanel() {
   return (
@@ -18,7 +18,7 @@ function StudentPanel() {
                 
                 <Route path="/home" component={Home} /> 
                 <Route path="/courseList" component={CourseList} />
-                <Route path="/editcourse" component={EditCourseModal} />
+                <Route path="/resumecourse" component={ResumeCourse} />
                 <Route path="/settings" component={Settings} /> 
                 <Route path="/addlesson" component={AddLesson} /> 
                 <Route path="/profile" component={Profile} /> 
