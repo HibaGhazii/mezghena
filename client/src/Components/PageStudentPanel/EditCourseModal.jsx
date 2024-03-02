@@ -1,61 +1,67 @@
 import React, { useState } from 'react'; 
 import DashboardNav from './DashboardNav';
 import image from '../assets/img/howitwork.png';
-import { FaArrowRotateLeft,FaClock } from "react-icons/fa6";
+import { FaArrowRotateLeft, FaClock } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 import { MdInsertChart } from "react-icons/md";
-import { FaFileAlt,FaFolder  } from "react-icons/fa";
+import { FaFileAlt, FaFolder  } from "react-icons/fa";
 
 function ResumeCourse() {
-    const [videoUrl, setVideoUrl] = useState(''); 
+    const [videoUrl, setVideoUrl] = useState('https://www.youtube.com/embed/4k6Xgjqkad4'); 
     const [rating, setRating] = useState(0);
 
     const handleRating = (value) => {
         setRating(value);
     };
 
+    const handleVideoClick = (url) => {
+        setVideoUrl(url);
+    };
 
     const lessons = [
         {
-            image: image,
-            title: "Introduction to Web Development",
-            description: "Let's start with a quick tour of Vue's data binding features.",
-            price: 123,
-            sales: 34,
-            level: "Intermediate",
-            gulp: "GULP"
-          },
-          {
-            image: image,
-            title: "Introduction to Web Development",
-            description: "Let's start with a quick tour of Vue's data binding features.",
-            price: 123,
-            sales: 34,
-            level: "Intermediate",
-            gulp: "GULP"
-          },
-          {
-            image: image,
-            title: "Introduction to Web Development",
-            description: "Let's start with a quick tour of Vue's data binding features.",
-            price: 123,
-            sales: 34,
-            level: "Intermediate",
-            gulp: "GULP"
-          },
-          {
-            image: image,
-            title: "Introduction to Web Development",
-            description: "Let's start with a quick tour of Vue's data binding features.",
-            price: 123,
-            sales: 34,
-            level: "Intermediate",
-            gulp: "GULP"
-          },
-          
-    ]
+            id: 1,
+            title: "Installation",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt.",
+            videoUrl: "https://www.youtube.com/embed/4k6Xgjqkad4",
+        },
+        {
+            id: 2,
+            title: "The MVC architectural pattern",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt.",
+            videoUrl: "https://www.youtube.com/embed/sBws8MSXN7A",
+        },
+        
+        {
+            id: 3,
+            title: "Database Models",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt.",
+            videoUrl: "https://www.youtube.com/embed/dpw9EHDh2bM",
+        },
+        
+        {
+            id: 4,
+            title: "Database Access",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt.",
+            videoUrl: "https://www.youtube.com/embed/XLJN4JfniH4",
+        },
+        
+        {
+            id: 5,
+            title: "Eloquent Basics",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt.",
+            videoUrl: "https://www.youtube.com/embed/UBOj6rqRUME",
+        },
+        
+        {
+            id: 6,
+            title: "Take quiz",
+            description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt illum ipsam magniima mollitia officiis quia tempora! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dicta eius enim inventoreus optio ratione veritatis. Beatae deserunt.",
+            videoUrl: "https://www.youtube.com/embed/qjI7cE3aW0s",
+        },
+    ];
 
-  return (
+    return (
         <div className='pl-[340px] mr-[100px] mt-5'>
             <DashboardNav/>
             <div className='flex justify-between items-center mt-10'>
@@ -65,40 +71,38 @@ function ResumeCourse() {
            <div className='flex gap-10'>
                 <div className=' w-[65%]'>
                     <div className='rounded-lg shadow-lg shadow-gray-400 mt-6'>
-                        <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Basic informations</p>
-                        <hr className='border-gray-400'/>
 
-                        <div className='p-6'>
-                            <p>Title</p>
-                            <input type="text" placeholder='Basics of React...' className='w-full rounded-xl border border-gray-300 mb-2 my-1'/>
+                        <div className="p-3 flex flex-col justify-center">
+                            {/* Video */}
+                            <div className="relative w-full h-96">
+                                <iframe
+                                className="absolute top-0 left-0 w-full h-full"
+                                src={videoUrl}
+                                title="Random Video"
+                                allowFullScreen
+                                ></iframe>
+                            </div>
                             
-                            <p className='mt-2'>Description</p>
-                            <textarea name="description" placeholder='Basics of React...' cols="30" rows="10"  className=' w-full rounded-xl border border-gray-300 my-1'></textarea>
+                            {/* Description */}
+                            <div className="p-2">
+                                <p className="text-gray-700">
+                                    {/* Display description of the currently selected lesson */}
+                                    {lessons.find(lesson => lesson.videoUrl === videoUrl)?.description || ''}
+                                </p>
+                            </div>
                         </div>
                     </div>
 
                     <div className='rounded-lg shadow-lg shadow-gray-400 my-6'>
-                        <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Lessons</p>
-                        <hr className='border-gray-400'/>
-
-                        <div className='p-6'>
-                            <Link to='/addlesson' className='bg-first-color text-white rounded-3xl px-6 py-1'>Add lesson + </Link>
-                            <div className='mt-4'> 
-                                {lessons.map((lesson, index) => (
-                                    <div key={index} className='px-5 flex justify-between items-center shadow-lg rounded-xl p-4'>
-                                        <div className='flex items-center gap-2'> 
-                                            <img src={lesson.image} alt={lesson.title} className='w-16 h-16 object-cover rounded-2xl'/>
-                                            <div>
-                                                <h2 className='text-xl my-1 font-bold text-bg-toggle'>{lesson.title}</h2>
-                                                <p className='text-gray-600 mb-5'>{lesson.description}</p>  
-                                            </div>
-                                        </div>
-                                        <div className='bg-first-color p-2 rounded-lg text-white cursor-pointer'>
-                                            <FaArrowRotateLeft /> 
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
+                        <div className=''>
+                            {/* Map over lessons to display video titles */}
+                            {lessons.map((lesson, index) => (
+                                <div key={index} className=''>
+                                    {/* Attach handleVideoClick to each video title */}
+                                    <p onClick={() => handleVideoClick(lesson.videoUrl)} className='font-semibold py-4 px-6 cursor-pointer'>{lesson.id}. {lesson.title}</p>
+                                    <hr className='border-gray-300'/>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -152,7 +156,7 @@ function ResumeCourse() {
                             </div>
                             
                         </div>
-                       
+                    
                     </div>
 
                     <div className=' rounded-lg shadow-lg shadow-gray-400 mt-6 px-4'>
@@ -183,11 +187,9 @@ function ResumeCourse() {
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </div>
-  );
+    );
 }
 
 export default ResumeCourse;
