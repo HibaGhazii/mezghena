@@ -109,7 +109,7 @@ function ResumeCourse() {
 
                 <div className='w-[35%]'> 
 
-                    <div className='rounded-lg shadow-lg shadow-gray-400 mt-6'>
+                    <div className='hidden rounded-lg shadow-lg shadow-gray-400 mt-6'>
                         <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Add Comments + </p>
                         <hr className='border-gray-400'/>
 
@@ -138,6 +138,22 @@ function ResumeCourse() {
                             <button className=' bg-first-color/30 text-bg-toggle py-1 px-8 rounded-xl'>Modify</button>
                             <button className=' bg-first-color text-white py-1 px-8 rounded-xl'>Send</button>
                         </div>
+                    </div>
+
+                    <div className='rounded-lg shadow-lg shadow-gray-400 mt-6 p-6 text-center text-lg font-semibold'>
+                    
+                        <button className='bg-first-color text-white rounded-2xl w-full py-2 mb-3'> 
+                            <p>Get all Courses</p>
+                            <p>9$ / month</p>
+                        </button>
+
+                        <hr className='border-gray-400'/>
+
+                        <button className='bg-light-blue/50 text-first-color rounded-2xl w-full py-2 mt-3'>
+                            <p>Purshase Course</p>
+                            <p>25$ USD</p> 
+                        </button>
+                    
                     </div>
 
                     <div className=' rounded-lg shadow-lg shadow-gray-400 mt-6'>

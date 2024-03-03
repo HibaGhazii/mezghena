@@ -4,7 +4,6 @@ import { BiMenuAltLeft } from "react-icons/bi";
 import { CiSearch } from "react-icons/ci";
 import image from '../assets/img/howitwork.png';
 import Pagination from '../Pagecours/Pagination';
-
 import { Link } from 'react-router-dom';
 
 const CourseList = () => {
@@ -94,7 +93,6 @@ const CourseList = () => {
     
   ]);
   
-
   const [searchTerm, setSearchTerm] = useState('');
   const [sortBy, setSortBy] = useState(null);
   const [currentPage, setCurrentPage] = useState(1);
