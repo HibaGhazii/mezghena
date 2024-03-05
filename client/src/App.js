@@ -10,6 +10,7 @@ import CourseID from './Components/Pagecours/CourseID';
 import Service from './Components/PageService/Service';
 import AdminPanel from './Components/PageAdminPanel/AdminPanel';
 import StudentPanel from './Components/PageStudentPanel/StudentPanel';
+import SuperAdminPanel from './Components/PageSuperAdminPanel/SuperAdminPanel';
 
 function App() {
   return (
@@ -27,7 +28,7 @@ function App() {
           <Route path='/service' component={Service}/> 
           <Route path='/admin' component={AdminPanel}/>
           <Route path='/studentPanel' component={StudentPanel}/>
-
+          <Route path='/superadminPanel' component={SuperAdminPanel}/>
         </Switch>
         
     </Router>

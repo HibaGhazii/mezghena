@@ -25,21 +25,21 @@ function SidebarComponent() {
               </SidebarItem>
             </Link>
 
-            <Link to='/courseList' onClick={() => setActiveLink('/courseList')}>
-              <SidebarItem icon={FaUserCog} active={activeLink === '/courseList'}>
+            <Link to='/supervisors' onClick={() => setActiveLink('/supervisors')}>
+              <SidebarItem icon={FaUserCog} active={activeLink === '/supervisors'}>
                 <p className='pl-2'>Supervisors</p>
               </SidebarItem>
             </Link>
             
-            <Link to='/settings' onClick={() => setActiveLink('/settings')}>
-              <SidebarItem icon={FaGraduationCap} active={activeLink === '/settings'}>
+            <Link to='/teachers' onClick={() => setActiveLink('/teachers')}>
+              <SidebarItem icon={FaGraduationCap} active={activeLink === '/teachers'}>
                 <p className='pl-2'>Teachers</p>
               </SidebarItem>
             </Link>
             
-            <Link to='/courseList' onClick={() => setActiveLink('/courseList')}>
-              <SidebarItem icon={FaUserEdit} active={activeLink === '/courseList'}>
-                <p className='pl-2'>Courses</p>
+            <Link to='/students' onClick={() => setActiveLink('/students')}>
+              <SidebarItem icon={FaUserEdit} active={activeLink === '/students'}>
+                <p className='pl-2'>Students</p>
               </SidebarItem>
             </Link>
             
