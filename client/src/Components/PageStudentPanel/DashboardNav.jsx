@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { Link } from 'react-router-dom';
 import TurnOnOff from './TurnOnOff';
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSettingsOutline } from "react-icons/io5";
@@ -7,7 +7,6 @@ import profile from '../assets/img/card.png';
 import { CgProfile } from "react-icons/cg";
 import { IoMdSettings } from "react-icons/io";
 import { RiLogoutCircleRLine } from "react-icons/ri";
-import { Link } from 'react-router-dom';
 
 // Dropdown for Notifications
 const NotificationDropdown = ({ isOpen, toggleDropdown }) => {
@@ -94,13 +93,13 @@ const ProfileDropdown = ({ isOpen, toggleDropdown }) => {
       />
       {isOpen && (
         <div className=" absolute right-0 top-14 bg-white border border-gray-200 rounded shadow">
-            <div className='flex items-center gap-3 w-80 p-2'> 
+            <Link to='/accountinfo' className='flex items-center gap-3 w-80 p-2'> 
                 <img src={profile} className='rounded-full w-12 h-12'/>
                 <div>
                     <p className='text-bg-toggle font-bold text-xl'>Micheal John</p>
                     <p className='text-sm text-gray-500'>michael.john@gmail.com</p>
                 </div>
-            </div>
+            </Link>
                 <hr  className='border-2 border-light-blue'/>
 
             <Link to='/profile' className='flex items-center gap-2 py-2' >

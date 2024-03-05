@@ -109,7 +109,7 @@ function ResumeCourse() {
 
                 <div className='w-[35%]'> 
 
-                    <div className='hidden rounded-lg shadow-lg shadow-gray-400 mt-6'>
+                    <div className='rounded-lg shadow-lg shadow-gray-400 mt-6'>
                         <p className='text-bg-toggle text-xl font-bold py-4 px-6'>Add Comments + </p>
                         <hr className='border-gray-400'/>
 

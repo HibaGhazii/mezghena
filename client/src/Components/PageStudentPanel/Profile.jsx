@@ -92,7 +92,7 @@ const Profile = () => {
             <div className='flex gap-2 items-center my-2'>
                 <img src={image} className='w-14 h-14 rounded-full mx-4'/>
                 <div className='flex flex-col text-left'>
-                    <p className='text-bg-toggle font-bold text-2xl'>John Doe</p>
+                    <p className='text-bg-toggle font-bold text-xl'>John Doe</p>
                     <p className='text-gray-600 text-md'>FullStack Developer</p>
                     <p className='text-gray-400 text-sm'>Michele.colin@gmail.com</p>
                 </div>
