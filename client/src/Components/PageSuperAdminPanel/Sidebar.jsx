@@ -3,6 +3,8 @@ import { FaUserEdit, FaSignOutAlt } from "react-icons/fa";
 import { IoMdHome, IoMdSettings } from "react-icons/io";
 import logo from '../assets/img/mezghena-logo.svg';
 import { Link } from 'react-router-dom';
+import { FaGraduationCap } from "react-icons/fa6";
+import { FaUserCog } from "react-icons/fa";
 
 function SidebarComponent() {
   const [activeLink, setActiveLink] = useState('/home');
@@ -20,6 +22,18 @@ function SidebarComponent() {
             <Link to='/home' onClick={() => setActiveLink('/home')}>
               <SidebarItem icon={IoMdHome} active={activeLink === '/home'}>
                 <p className='pl-2'> Home</p>
+              </SidebarItem>
+            </Link>
+
+            <Link to='/courseList' onClick={() => setActiveLink('/courseList')}>
+              <SidebarItem icon={FaUserCog} active={activeLink === '/courseList'}>
+                <p className='pl-2'>Supervisors</p>
+              </SidebarItem>
+            </Link>
+            
+            <Link to='/settings' onClick={() => setActiveLink('/settings')}>
+              <SidebarItem icon={FaGraduationCap} active={activeLink === '/settings'}>
+                <p className='pl-2'>Teachers</p>
               </SidebarItem>
             </Link>
             

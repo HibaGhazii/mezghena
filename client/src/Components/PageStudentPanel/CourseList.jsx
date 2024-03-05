@@ -130,8 +130,8 @@ const CourseList = () => {
 
       <div>
         <div className='flex justify-between items-center mt-10'>
-          <p className='text-bg-toggle text-4xl font-bold'>Manage Courses</p>
-          <button className='rounded-3xl bg-first-color text-white px-8 py-2'>Add Course</button>
+          <p className='text-bg-toggle text-4xl font-bold'>My Courses</p>
+          
         </div>
 
         <div className='mt-10 p-6 shadow-lg rounded'>
