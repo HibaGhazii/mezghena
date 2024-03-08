@@ -12,7 +12,7 @@ const Students = () => {
         image: image,
         age:25,
         name: 'John Doe',
-        course: 'React Development',
+        course: 'Front-end with React.js',
         startedSince: '2023/01/01',
         finishedAt: '2023/06/30',
         price: '$200',
@@ -25,7 +25,7 @@ const Students = () => {
         image: image,
         age:25,
         name: 'John Doe',
-        course: 'React Development',
+        course: 'Front-end with React.js',
         startedSince: '2023/01/01',
         finishedAt: '2023/06/30',
         price: '$200',
@@ -38,7 +38,7 @@ const Students = () => {
         image: image,
         age:25,
         name: 'John Doe',
-        course: 'React Development',
+        course: 'Front-end with React.js',
         startedSince: '2023/01/01',
         finishedAt: '2023/06/30',
         price: '$200',
@@ -51,7 +51,7 @@ const Students = () => {
         image: image,
         age:25,
         name: 'John Doe',
-        course: 'React Development',
+        course: 'Front-end with React.js',
         startedSince: '2023/01/01',
         finishedAt: '2023/06/30',
         price: '$200',
@@ -64,7 +64,7 @@ const Students = () => {
         image: image,
         age:25,
         name: 'John Doe',
-        course: 'React Development',
+        course: 'Front-end with React.js',
         startedSince: '2023/01/01',
         finishedAt: '2023/06/30',
         price: '$200',
@@ -77,7 +77,7 @@ const Students = () => {
         image: image,
         age:25,
         name: 'John Doe',
-        course: 'React Development',
+        course: 'Front-end with React.js',
         startedSince: '2023/01/01',
         finishedAt: '2023/06/30',
         price: '$200',
@@ -141,7 +141,7 @@ const Students = () => {
                     <td className='py-4'>{student.price}</td>
                     <td className='py-4'>
                       <button className='text-green-500 bg-emerald-200 py-1 px-6 rounded-full'>{student.state}</button>
-                      <button className='text-bg-toggle bg-blue-200 py-1 px-6 rounded-full'>{student.state2}</button>
+                      <button className='text-blue-500 bg-blue-200 py-1 px-6 rounded-full'>{student.state2}</button>
                       <button className='text-orange-500 bg-orange-200 py-1 px-6 rounded-full'>{student.state3}</button>
                     </td>
                     <td className='py-4'>
